@@ -14,3 +14,15 @@ input[type=submit]:hover {
 input[type=file] {
   display: none;
 }
+
+.logout {
+  cursor: pointer;
+  background: #00a9f1;
+  color: #fff;
+  margin: 0 auto;
+}
+.logout:hover {
+  background: #00a9f1;
+  color: #fff;
+  opacity: 0.8;
+}

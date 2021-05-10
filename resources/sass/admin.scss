@@ -14,3 +14,16 @@ input[type='submit'] {
 input[type='file'] {
   display: none;
 }
+
+.logout {
+  cursor: pointer;
+  background: #00a9f1;
+  color: #fff;
+  margin: 0 auto;
+
+  &:hover {
+    background: #00a9f1;
+    color: #fff;
+    opacity: 0.8;
+  }
+}

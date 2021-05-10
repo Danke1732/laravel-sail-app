@@ -22,5 +22,8 @@
         "sass": "^1.32.12",
         "sass-loader": "^11.0.1",
         "tailwindcss": "^2.0.2"
+    },
+    "dependencies": {
+        "gentelella": "^1.4.0"
     }
 }

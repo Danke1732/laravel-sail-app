@@ -18,4 +18,6 @@ mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'pub
 ]);
 
 mix.sass('resources/sass/app.scss', 'public/css/style.css');
+mix.sass('resources/sass/signin.scss', 'public/css/signin.css');
+mix.sass('resources/sass/admin.scss', 'public/css/admin.css');
 mix.js('resources/js/main.js', 'public/js/main.js');

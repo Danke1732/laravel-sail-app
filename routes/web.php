@@ -13,9 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// 一般ユーザーミドルウェア
 Route::get('/', function () {
     return view('home');
 });
+
+//  -- 管理者ユーザーミドルウェア --
+
+// 管理者ユーザーログインページへ遷移
+Route::get('admin/login', function() {
+    return view('admin.admin_login');
+});
+// 管理者ユーザーログイン処理
+Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.login');
+
+// 管理者画面ホーム
+Route::get('admin/home', function() {
+    return view('admin.admin_home');
+});
+// Route::get('/admin/home', [AdminController::class, 'adminHome'])->name('admin.home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

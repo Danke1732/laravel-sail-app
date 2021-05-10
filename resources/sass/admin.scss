@@ -1,0 +1,16 @@
+.select-img,
+input[type='submit'] {
+  cursor: pointer;
+  background: #00a9f1;
+  color: #fff;
+  margin: 0 auto;
+
+  &:hover {
+    color: #fff;
+    opacity: 0.8;
+  }
+}
+
+input[type='file'] {
+  display: none;
+}

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,25 +14,43 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// 一般ユーザーミドルウェア
+// -- 一般ユーザーミドルウェア --
+// 一般ユーザーログイン未のミドルウェア
+// Route::middleware(['guest'])->group(function () {
+
+// });
+
+// 利回り計算ページ表示
 Route::get('/', function () {
     return view('home');
 });
 
+// 一般ユーザーログイン済みのミドルウェア
+// Route::middleware(['auth'])->group(function () {
+
+// });
+
 //  -- 管理者ユーザーミドルウェア --
-
-// 管理者ユーザーログインページへ遷移
-Route::get('admin/login', function() {
-    return view('admin.admin_login');
+// 管理者ユーザーログイン時のミドルウェア
+Route::group(['middleware' => ['auth.check']], function () {
+    // 管理者ユーザーログインページへ遷移
+    Route::get('admin/login', function() {
+        return view('admin.admin_login');
+    })->name('admin.showLogin');
+    // 管理者ユーザーログイン処理
+    Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.login');
 });
-// 管理者ユーザーログイン処理
-Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.login');
 
-// 管理者画面ホーム
-Route::get('admin/home', function() {
-    return view('admin.admin_home');
+// 管理者ユーザーログイン未のミドルウェア
+Route::group(['middleware' => ['auth.admin']], function () {
+    // 管理者画面ホーム
+    Route::get('admin/home', function() {
+        return view('admin.admin_home');
+    })->name('admin.home');
+
+    // 管理者ユーザーログアウト処理
+    Route::post('admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 });
-// Route::get('/admin/home', [AdminController::class, 'adminHome'])->name('admin.home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

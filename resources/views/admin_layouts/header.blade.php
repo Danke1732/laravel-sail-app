@@ -6,7 +6,10 @@
       <nav class="nav navbar-nav">
       <ul class=" navbar-right">
         <li class="nav-item dropdown open" style="padding-left: 15px;">
-          <a class="dropdown-item"  href="login.html"><i class="fa fa-sign-out pull-right"></i> ログアウト</a>
+        <form action="{{ route('admin.logout') }}" method="POST">
+          @csrf
+          <input type="submit" value=" ログアウト" class="dropdown-item logout rounded">
+        </form>
         </li>
       </ul>
     </nav>

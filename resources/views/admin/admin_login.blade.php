@@ -25,11 +25,11 @@
     @csrf
     <div class="form-item">
       <label for="admin_id"></label>
-      <input type="text" name="admin_id" class="rounded" placeholder="Admin ID" required autofocus>
+      <input type="text" name="admin_id" placeholder="Admin ID" required autofocus>
     </div>
     <div class="form-item">
       <label for="password"></label>
-      <input type="password" name="password" class="rounded" placeholder="Password" required>
+      <input type="password" name="password" placeholder="Password" required>
     </div>
     <div class="button-panel">
       <input type="submit" class="button" title="Sign In" value="Sign In"></input>

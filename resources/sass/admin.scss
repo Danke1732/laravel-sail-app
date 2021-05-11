@@ -1,9 +1,7 @@
-.select-img,
 input[type='submit'] {
   cursor: pointer;
   background: #00a9f1;
   color: #fff;
-  margin: 0 auto;
 
   &:hover {
     color: #fff;
@@ -11,18 +9,47 @@ input[type='submit'] {
   }
 }
 
-input[type='file'] {
-  display: none;
+label {
+  color: #555;
+  font-size: 1.0rem;
+}
+
+#image-content,
+#image-content2 {
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .logout {
   cursor: pointer;
   background: #00a9f1;
   color: #fff;
-  margin: 0 auto;
 
   &:hover {
     background: #00a9f1;
+    color: #fff;
+    opacity: 0.8;
+  }
+}
+
+.btn-edit {
+  background: #17a2b8;
+  color: #fff;
+
+  &:hover {
+    color: #fff;
+    opacity: 0.8;
+  }
+}
+
+.btn-delete {
+  background: #dc3545;
+  color: #fff;
+
+  &:hover {
     color: #fff;
     opacity: 0.8;
   }

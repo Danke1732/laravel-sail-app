@@ -1,0 +1,115 @@
+@extends('admin_layouts.admin_layout')
+@section('site_title', '管理者ページ')
+@section('content')
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <h3>広告一覧</h3>
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 ">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>広告（上）一覧</h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link ml-5"><i class="fa fa-chevron-up"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="card-box table-responsive">
+                  <table class="table table-striped table-bordered" style="width:100%">
+                    <thead>
+                      <tr>
+                        <th>id</th>
+                        <th>画像URL</th>
+                        <th>遷移先リンク</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+
+
+                    <tbody>
+                      <?php $i=0; ?>
+                      @foreach($ads_top_lists as $list)
+                      <tr>
+                        <?php $i++; ?>
+                        <td>{{ $i }}</td>
+                        <td>{{ $list->file_name }}</td>
+                        <td>{{ $list->link }}</td>
+                        <td>
+                          <a href="#" class="btn btn-sm btn-edit m-0">編集</a>
+                          <a href="#" class="btn btn-sm btn-delete m-0">削除</a>
+                        </td>
+                      </tr>
+                      @endforeach
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 ">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>広告（下）一覧</h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link ml-5"><i class="fa fa-chevron-up"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="card-box table-responsive">
+                  <table class="table table-striped table-bordered" style="width:100%">
+                    <thead>
+                      <tr>
+                        <th>id</th>
+                        <th>画像URL</th>
+                        <th>遷移先リンク</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+
+
+                    <tbody>
+                      <?php $i=0; ?>
+                      @foreach($ads_bottom_lists as $list)
+                      <tr>
+                        <?php $i++; ?>
+                        <td>{{ $i }}</td>
+                        <td>{{ $list->file_name }}</td>
+                        <td>{{ $list->link }}</td>
+                        <td>
+                          <a href="#" class="btn btn-sm btn-edit m-0">編集</a>
+                          <a href="#" class="btn btn-sm btn-delete m-0">削除</a>
+                        </td>
+                      </tr>
+                      @endforeach
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+@endsection

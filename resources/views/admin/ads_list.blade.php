@@ -46,7 +46,7 @@
                         <td>{{ $list->file_name }}</td>
                         <td>{{ $list->link }}</td>
                         <td>
-                          <a href="#" class="btn btn-sm btn-edit m-0">編集</a>
+                          <a href="/admin/ads_edit/{{ $list->id }}" class="btn btn-sm btn-edit m-0">編集</a>
                           <a href="#" class="btn btn-sm btn-delete m-0">削除</a>
                         </td>
                       </tr>
@@ -96,7 +96,7 @@
                         <td>{{ $list->file_name }}</td>
                         <td>{{ $list->link }}</td>
                         <td>
-                          <a href="#" class="btn btn-sm btn-edit m-0">編集</a>
+                        <a href="/admin/ads_edit/{{ $list->id }}" class="btn btn-sm btn-edit m-0">編集</a>
                           <a href="#" class="btn btn-sm btn-delete m-0">削除</a>
                         </td>
                       </tr>

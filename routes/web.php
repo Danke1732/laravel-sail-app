@@ -47,6 +47,13 @@ Route::group(['middleware' => ['auth.admin']], function () {
     Route::get('admin/home', function() {
         return view('admin.admin_home');
     })->name('admin.home');
+    // 管理者広告一覧表示
+    Route::get('admin/ads_list', [AdminController::class, 'ads_list'])->name('admin.ads_list');
+
+    // ads1(上)登録処理
+    Route::post('/admin/upload_top', [AdminController::class, 'upload_top'])->name('ads.upload_top');
+    // ads2(下)登録処理
+    Route::post('/admin/upload_bottom', [AdminController::class, 'upload_bottom'])->name('ads.upload_bottom');
 
     // 管理者ユーザーログアウト処理
     Route::post('admin/logout', [AdminController::class, 'logout'])->name('admin.logout');

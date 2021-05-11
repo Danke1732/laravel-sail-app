@@ -21,3 +21,4 @@ mix.sass('resources/sass/app.scss', 'public/css/style.css');
 mix.sass('resources/sass/signin.scss', 'public/css/signin.css');
 mix.sass('resources/sass/admin.scss', 'public/css/admin.css');
 mix.js('resources/js/main.js', 'public/js/main.js');
+mix.js('resources/js/admin.js', 'public/js/admin.js');

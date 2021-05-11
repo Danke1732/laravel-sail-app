@@ -45,3 +45,39 @@ window.addEventListener('DOMContentLoaded', () => {
     createImageHTML(file);
   });
 });
+
+window.addEventListener('DOMContentLoaded', () => {
+  const imageList = document.getElementById('image-content');
+  let imageUrl = document.getElementById('image');
+
+  function createImageHTML() {
+    const imageDisplay = document.createElement('div');
+    const image = document.createElement('img');
+    image.setAttribute('src', file);
+    image.setAttribute('class', 'review-image');
+    imageDisplay.appendChild(image);
+    imageList.appendChild(imageDisplay);
+  }
+
+  const file = imageUrl.value;
+  createImageHTML(file);
+
+  document.getElementById('image').addEventListener('input', () => {
+    const imageBefore = document.querySelector('.review-image');
+    if (imageBefore) {
+      imageBefore.remove();
+    }
+
+    function createImageHTML() {
+      const imageDisplay = document.createElement('div');
+      const image = document.createElement('img');
+      image.setAttribute('src', file);
+      image.setAttribute('class', 'review-image');
+      imageDisplay.appendChild(image);
+      imageList.appendChild(imageDisplay);
+    }
+
+    const file = imageUrl.value;
+    createImageHTML(file);
+  });
+});

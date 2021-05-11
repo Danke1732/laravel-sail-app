@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\AdsTopCreateRequest;
 use App\Http\Requests\AdsBottomCreateRequest;
+use App\Http\Requests\AdsUpdateRequest;
 use App\Models\Ad;
 use Illuminate\Support\Facades\Storage;
 
@@ -100,7 +101,7 @@ class AdminController extends Controller
             }
         } 
 
-        return redirect()->route('admin.home');
+        return redirect()->route('admin.ads_list');
     }
 
     /**
@@ -148,6 +149,76 @@ class AdminController extends Controller
             }
         } 
 
-        return redirect()->route('admin.home');
+        return redirect()->route('admin.ads_list');
+    }
+
+    /**
+     * 広告編集ページ表示
+     * @param $id
+     * @return View
+     */
+    public function ads_edit($id)
+    {
+        $ad = Ad::find($id);
+        return view("admin.ads_edit", ["ad" => $ad]);
+    }
+
+    /**
+     * 広告の更新処理
+     * @param App\Http\Requests\AdsUpdateRequest $request
+     */
+    public function update(AdsUpdateRequest $request)
+    {
+        // 送られてきたデータを取得
+        $inputs = $request->all();
+        // レコードデータを取得
+        $ad = Ad::findOrFail($inputs['id']);
+        // 送られてきた画像情報を取得(変数へ代入)
+        $upload_image = $request->input('image');
+
+        // 送られてきたデータを元に更新処理
+        \DB::beginTransaction();
+        try {
+            // 画像についての更新を行うかチェック
+            if (isset($inputs['image']) === true) {
+                // 元の画像を削除(substr "/storage/" の文字列を取り除く)
+                $result = Storage::disk('public')->delete(substr($ad->file_path, 9));
+                // アップロードされた画像を保存する
+                // 画像のファイルの記述情報を$imgへ代入
+                $img = file_get_contents($upload_image);
+                // Adテーブルのidカラムの最大値を取得
+                $maxId = Ad::max('id');
+                // idの+1をファイル名に付与する
+                $ads_num = $maxId + 1;
+                // 上下どちらの広告かの条件分岐
+                if ($inputs['location'] == 0) {
+                    $path = "ads_top-$ads_num";
+                } else {
+                    $path = "ads_bottom-$ads_num";
+                }
+                // Storage/public内に画像ファイルを保存
+                Storage::disk('public')->put($path, $img);
+                // Storage内のファイルパスを取得
+                $new_path = Storage::url($path);
+                // 画像情報更新
+                $ad->fill([
+                    'file_name' => $upload_image,
+                    'file_path' => $new_path,
+                ]);
+            }
+            // 画像以外の更新
+            $ad->fill([
+                'link' => $inputs['ad-link'],
+                'location' => $inputs['location'],
+            ]);
+            // データの保存
+            $ad->save();
+            \DB::commit();
+        } catch(\Throwable $e) {
+            \DB::rollback();
+            return redirect()->route('admin.ads_edit');
+        }
+
+        return redirect()->route('admin.ads_list');
     }
 }

@@ -25,12 +25,11 @@
       <p>下部に自動的に利回りシミュレーション結果が表示されます。</p>
     </section>
 
-    <div class="ad-display mx-auto mb-4">
-      <h1>広告エリア</h1>
-      <h1>バナーの設置</h1>
+    <div class="ad-display mx-auto mb-3 mb-md-4 text-center container">
+      <a href="{{ $ad_top->link }}" class="d-inline-block mx-auto"><img src="{{ asset($ad_top->file_path) }}"></a>
     </div>
 
-    <section class="container-fluid mx-auto p-0 pb-4 main-tool">
+    <section class="container-fluid mx-auto p-0 pb-3 pb-md-4 main-tool">
       <form action="">
         <div class="form-item p-3 p-md-4">
           <h1 class="heading_title mb-4">購入価格項目を入力してください。</h1>
@@ -450,9 +449,8 @@
       </form>
     </section>
 
-    <div class="ad-display mx-auto mb-4">
-      <h1>広告エリア</h1>
-      <h1>バナーの設置</h1>
+    <div class="ad-display mx-auto mb-3 mb-md-4 text-center container">
+      <a href="{{ $ad_top->link }}" class="d-inline-block mx-auto"><img src="{{ asset($ad_bottom->file_path) }}"></a>
     </div>
 
     <a href="#header" class="return-top_btn hidden">

@@ -3,8 +3,8 @@
     <ul class="nav side-menu">
       <li><a><i class="fa fa-newspaper-o"></i> 広告 <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
-          <li><a href="{{ route('admin.home') }}">広告追加</a></li>
           <li><a href="{{ route('admin.ads_list') }}">広告一覧</a></li>
+          <li><a href="{{ route('admin.ads_new') }}">広告追加</a></li>
           <!-- <li><a href="index3.html">Dashboard3</a></li> -->
         </ul>
       </li>

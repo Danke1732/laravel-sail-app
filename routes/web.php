@@ -58,6 +58,8 @@ Route::group(['middleware' => ['auth.admin']], function () {
     Route::post('/admin/upload_bottom', [AdminController::class, 'upload_bottom'])->name('ads.upload_bottom');
     // ads更新処理
     Route::post('/admin/update', [AdminController::class, 'update'])->name('ads.update');
+    // ads削除処理
+    Route::post('/admin/ads_delete/{id}', [AdminController::class, 'exeDelete'])->name('admin.ads_delete');
 
     // 管理者ユーザーログアウト処理
     Route::post('admin/logout', [AdminController::class, 'logout'])->name('admin.logout');

@@ -221,4 +221,30 @@ class AdminController extends Controller
 
         return redirect()->route('admin.ads_list');
     }
+
+    /**
+     * 広告の削除処理
+     * @param  int $id
+     * @return view
+     */
+    function exeDelete($id)
+    {
+        $ad = Ad::find($id);
+
+        if (is_null($ad)) {
+            return redirect()->route('admin.ads_list');
+        }
+
+        try {
+            if (isset($ad->file_path)) {
+                // 元の画像を削除(substr "/storage/" の文字列を取り除く)
+                $result = Storage::disk('public')->delete(substr($ad->file_path, 9));
+            }
+            Ad::destroy($id);
+        } catch(\Throwable $e) {
+            abort(500);
+        }
+
+        return redirect()->route('admin.ads_list');
+    }
 }

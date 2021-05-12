@@ -47,7 +47,10 @@
                         <td>{{ $list->link }}</td>
                         <td>
                           <a href="/admin/ads_edit/{{ $list->id }}" class="btn btn-sm btn-edit m-0">編集</a>
-                          <a href="#" class="btn btn-sm btn-delete m-0">削除</a>
+                          <form action="{{ route('admin.ads_delete', $list->id) }}" method="POST" class="d-inline">
+                          @csrf
+                            <button type="submit" class="btn btn-sm btn-delete m-0">削除</button>
+                          </form>
                         </td>
                       </tr>
                       @endforeach
@@ -96,8 +99,11 @@
                         <td>{{ $list->file_name }}</td>
                         <td>{{ $list->link }}</td>
                         <td>
-                        <a href="/admin/ads_edit/{{ $list->id }}" class="btn btn-sm btn-edit m-0">編集</a>
-                          <a href="#" class="btn btn-sm btn-delete m-0">削除</a>
+                          <a href="/admin/ads_edit/{{ $list->id }}" class="btn btn-sm btn-edit m-0">編集</a>
+                          <form action="{{ route('admin.ads_delete', $list->id) }}" method="POST" class="d-inline">
+                          @csrf
+                          <button type="submit" class="btn btn-sm btn-delete m-0">削除</button>
+                          </form>
                         </td>
                       </tr>
                       @endforeach

@@ -24,7 +24,7 @@ class AdminController extends Controller
         if ($admin_id == config('admin.admin_id') && $password == config('admin.admin_pass')) {
             // ログインの成功
             $request->session()->put("admin_auth", true);
-            return redirect()->route("admin.home");
+            return redirect()->route("admin.ads_list");
         }
 
         // ログイン失敗
@@ -74,11 +74,9 @@ class AdminController extends Controller
             // アップロードされた画像を保存する
             // 画像のファイルの記述情報を$imgへ代入
             $img = file_get_contents($upload_image);
-            // Adテーブルのidカラムの最大値を取得
-            $maxId = Ad::max('id');
-            // idの+1をファイル名にする
-            $ads_num = $maxId + 1;
-            $path = "ads_top-$ads_num";
+            // file_pathに作成日時を付与して一意性を保つ
+            $dateTime = date("Y-m-d_H-i-s");
+            $path = "ads_top-$dateTime";
 
             // Storage/public内に画像ファイルを保存
             Storage::disk('public')->put($path, $img);
@@ -96,7 +94,7 @@ class AdminController extends Controller
                     \DB::commit();
                 } catch(\Throwable $e) {
                     \DB::rollback();
-                    return redirect()->route('admin.home');
+                    return redirect()->route('admin.ads_new');
                 }
             }
         } 
@@ -122,11 +120,9 @@ class AdminController extends Controller
             // アップロードされた画像を保存する
             // 画像のファイルの記述情報を$imgへ代入
             $img = file_get_contents($upload_image);
-            // Adテーブルのidカラムの最大値を取得
-            $maxId = Ad::max('id');
-            // idの+1をファイル名にする
-            $ads_num = $maxId + 1;
-            $path = "ads_bottom-$ads_num";
+            // file_pathに作成日時を付与して一意性を保つ
+            $dateTime = date("Y-m-d_H-i-s");
+            $path = "ads_bottom-$dateTime";
 
             // Storage/public内に画像ファイルを保存
             Storage::disk('public')->put($path, $img);
@@ -144,7 +140,7 @@ class AdminController extends Controller
                     \DB::commit();
                 } catch(\Throwable $e) {
                     \DB::rollback();
-                    return redirect()->route('admin.home');
+                    return redirect()->route('admin.ads_new');
                 }
             }
         } 
@@ -182,19 +178,17 @@ class AdminController extends Controller
             // 画像についての更新を行うかチェック
             if (isset($inputs['image']) === true) {
                 // 元の画像を削除(substr "/storage/" の文字列を取り除く)
-                $result = Storage::disk('public')->delete(substr($ad->file_path, 9));
+                Storage::disk('public')->delete(substr($ad->file_path, 9));
                 // アップロードされた画像を保存する
                 // 画像のファイルの記述情報を$imgへ代入
                 $img = file_get_contents($upload_image);
-                // Adテーブルのidカラムの最大値を取得
-                $maxId = Ad::max('id');
-                // idの+1をファイル名に付与する
-                $ads_num = $maxId + 1;
+                // file_pathに作成日時を付与して一意性を保つ
+                $dateTime = date("Y-m-d_H-i-s");
                 // 上下どちらの広告かの条件分岐
                 if ($inputs['location'] == 0) {
-                    $path = "ads_top-$ads_num";
+                    $path = "ads_top-$dateTime";
                 } else {
-                    $path = "ads_bottom-$ads_num";
+                    $path = "ads_bottom-$dateTime";
                 }
                 // Storage/public内に画像ファイルを保存
                 Storage::disk('public')->put($path, $img);
@@ -238,7 +232,7 @@ class AdminController extends Controller
         try {
             if (isset($ad->file_path)) {
                 // 元の画像を削除(substr "/storage/" の文字列を取り除く)
-                $result = Storage::disk('public')->delete(substr($ad->file_path, 9));
+                Storage::disk('public')->delete(substr($ad->file_path, 9));
             }
             Ad::destroy($id);
         } catch(\Throwable $e) {

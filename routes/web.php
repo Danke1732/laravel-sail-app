@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ChartsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,7 @@ use App\Http\Controllers\AdminController;
 // });
 
 // 利回り計算ページ表示
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [ChartsController::class, 'showCalculate'])->name('calculate');
 
 // 一般ユーザーログイン済みのミドルウェア
 // Route::middleware(['auth'])->group(function () {
@@ -44,9 +43,9 @@ Route::group(['middleware' => ['auth.check']], function () {
 // 管理者ユーザーログイン未のミドルウェア
 Route::group(['middleware' => ['auth.admin']], function () {
     // 管理者画面ホーム
-    Route::get('admin/home', function() {
-        return view('admin.admin_home');
-    })->name('admin.home');
+    Route::get('admin/ads_new', function() {
+        return view('admin.ads_new'); 
+    })->name('admin.ads_new');
     // 管理者広告一覧表示
     Route::get('admin/ads_list', [AdminController::class, 'ads_list'])->name('admin.ads_list');
     // 管理者広告編集ページ表示

@@ -23,6 +23,16 @@ label {
   }
 }
 
+.preview {
+  width: 300px;
+
+  img {
+    min-width: 280px;
+    width: 100%;
+    height: auto;
+  }
+}
+
 .logout {
   cursor: pointer;
   background: #00a9f1;

@@ -49,10 +49,10 @@ body {
   font-size: 0.7rem;
 }
 
-.ad-display {
-  background: orange;
-  height: 80px;
-  width: 70%;
+.ad-display a img {
+  max-width: 380px;
+  width: 100%;
+  height: auto;
 }
 
 .main-tool {

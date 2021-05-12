@@ -30,6 +30,7 @@
                     <thead>
                       <tr>
                         <th>id</th>
+                        <th>画像プレビュー</th>
                         <th>画像URL</th>
                         <th>遷移先リンク</th>
                         <th></th>
@@ -43,13 +44,14 @@
                       <tr>
                         <?php $i++; ?>
                         <td>{{ $i }}</td>
+                        <td class="preview"><img src="{{ $list->file_path }}"></td>
                         <td>{{ $list->file_name }}</td>
                         <td>{{ $list->link }}</td>
                         <td>
-                          <a href="/admin/ads_edit/{{ $list->id }}" class="btn btn-sm btn-edit m-0">編集</a>
+                          <a href="/admin/ads_edit/{{ $list->id }}" class="btn btn-sm btn-edit d-inline-block">編集</a>
                           <form action="{{ route('admin.ads_delete', $list->id) }}" method="POST" class="d-inline">
                           @csrf
-                            <button type="submit" class="btn btn-sm btn-delete m-0">削除</button>
+                            <button type="submit" class="btn btn-sm btn-delete d-inline-block">削除</button>
                           </form>
                         </td>
                       </tr>
@@ -83,6 +85,7 @@
                     <thead>
                       <tr>
                         <th>id</th>
+                        <th>画像プレビュー</th>
                         <th>画像URL</th>
                         <th>遷移先リンク</th>
                         <th></th>
@@ -96,13 +99,14 @@
                       <tr>
                         <?php $i++; ?>
                         <td>{{ $i }}</td>
+                        <td class="preview"><img src="{{ $list->file_path }}"></td>
                         <td>{{ $list->file_name }}</td>
                         <td>{{ $list->link }}</td>
                         <td>
-                          <a href="/admin/ads_edit/{{ $list->id }}" class="btn btn-sm btn-edit m-0">編集</a>
+                          <a href="/admin/ads_edit/{{ $list->id }}" class="btn btn-sm btn-edit d-inline-block">編集</a>
                           <form action="{{ route('admin.ads_delete', $list->id) }}" method="POST" class="d-inline">
                           @csrf
-                          <button type="submit" class="btn btn-sm btn-delete m-0">削除</button>
+                          <button type="submit" class="btn btn-sm btn-delete d-inline-block">削除</button>
                           </form>
                         </td>
                       </tr>

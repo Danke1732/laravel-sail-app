@@ -19,6 +19,15 @@ label {
   height: auto;
 }
 
+.preview {
+  width: 300px;
+}
+.preview img {
+  min-width: 280px;
+  width: 100%;
+  height: auto;
+}
+
 .logout {
   cursor: pointer;
   background: #00a9f1;

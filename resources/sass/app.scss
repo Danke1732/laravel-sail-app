@@ -82,9 +82,13 @@ body {
 
 // 広告
 .ad-display {
-  background: orange;
-  height: 80px;
-  width: 70%;
+  a {
+    img {
+      max-width: 380px;
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
 // 計算フォーム

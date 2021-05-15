@@ -22,3 +22,5 @@ mix.sass('resources/sass/signin.scss', 'public/css/signin.css');
 mix.sass('resources/sass/admin.scss', 'public/css/admin.css');
 mix.js('resources/js/main.js', 'public/js/main.js');
 mix.js('resources/js/admin.js', 'public/js/admin.js');
+mix.js('resources/js/input_limit.js', 'public/js/input_limit.js');
+mix.js('resources/js/calculate.js', 'public/js/calculate.js');

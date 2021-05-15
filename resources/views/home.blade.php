@@ -42,7 +42,7 @@
                 </div>
               </div>
             </label>
-            <input type="tel" name="property_price" id="property_price" class="rounded border-0 input-item py-2 pl-2 pr-3" placeholder="入力してください"><span class="ml-1 d-inline-block">万円</span>
+            <input type="number" name="property_price" id="property_price" class="rounded border-0 input-item py-2 pl-2 pr-3" placeholder="入力してください" pattern="^([1-9]\d*|0)(\.\d+)?$" required><span class="ml-1 d-inline-block">万円</span>
           </div>
 
           <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
@@ -69,7 +69,7 @@
               </div>
             </div>
             </label>
-            <input type="tel" name="purchase_fee" id="purchase_fee" class="rounded border-0 input-item py-2 px-3" value=10.0><span class="ml-1 d-inline-block">%</span>
+            <input type="number" name="purchase_fee" id="purchase_fee" class="rounded border-0 input-item py-2 px-3" value=10.0><span class="ml-1 d-inline-block">%</span>
           </div>
           <div class="d-flex justify-content-between">
             <label>購入総額 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -80,7 +80,7 @@
                 </div>
               </div>
             </label>
-            <p class="ml-auto">0.0</p><span class="ml-3 d-inline-block">万円</span>
+            <p class="ml-auto" id="total_purchase">0.0</p><span class="ml-3 d-inline-block">万円</span>
           </div>
         </div>
         <div class="form-item p-3 p-md-4">
@@ -96,7 +96,7 @@
                 </div>
               </div>
             </label>
-            <input type="tel" name="borrowing_amount" id="borrowing_amount" class="rounded border-0 input-item py-2 px-3" value=0.0><span class="ml-1 d-inline-block">万円</span>
+            <input type="number" name="borrowing_amount" id="borrowing_amount" class="rounded border-0 input-item py-2 px-3" value=0.0><span class="ml-1 d-inline-block">万円</span>
           </div>
           <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
             <label>自己資金 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -109,7 +109,7 @@
                 </div>
               </div>
             </label>
-            <p class="ml-auto">0.0</p><span class="ml-3 d-inline-block">万円</span>
+            <p class="ml-auto" id="own_resources">0.0</p><span class="ml-3 d-inline-block">万円</span>
           </div>
           <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
             <label>年間利息 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -122,7 +122,7 @@
                 </div>
               </div>
             </label>
-            <input type="tel" name="annual_interest" id="annual_interest" class="rounded border-0 input-item py-2 px-3" value=0.0><span class="ml-1 d-inline-block">%</span>
+            <input type="number" name="annual_interest" id="annual_interest" class="rounded border-0 input-item py-2 px-3" value=0.0><span class="ml-1 d-inline-block">%</span>
           </div>
           <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
             <label>借入期間 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -135,7 +135,7 @@
                 </div>
               </div>
             </label>
-            <input type="tel" name="borrowing_period" id="borrowing_period" class="rounded border-0 input-item py-2 px-3" value=35.0><span class="ml-1 d-inline-block">年</span>
+            <input type="number" name="borrowing_period" id="borrowing_period" class="rounded border-0 input-item py-2 px-3" value=35.0><span class="ml-1 d-inline-block">年</span>
           </div>
           <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-55 border-bottom">
             <label>年間元利返済額 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -151,7 +151,7 @@
                 </div>
               </div>
             </label>
-            <p class="ml-auto">0.0</p><span class="ml-3 d-inline-block">万円</span>
+            <p class="ml-auto" id="annual_repayment_amount">0.0</p><span class="ml-3 d-inline-block">万円</span>
           </div>
           <div class="d-flex justify-content-between">
             <label>返済総額 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -164,7 +164,7 @@
                 </div>
               </div>
             </label>
-            <p class="ml-auto">0.0</p><span class="ml-3 d-inline-block">万円</span>
+            <p class="ml-auto" id="total_repayment">0.0</p><span class="ml-3 d-inline-block">万円</span>
           </div>
         </div>
         <div class="form-item p-3 p-md-4">
@@ -180,7 +180,7 @@
                 </div>
               </div>
             </label>
-            <input type="tel" name="monthly_rent_income" id="monthly_rent_income" class="rounded border-0 input-item py-2 px-3" value=100.0><span class="ml-1 d-inline-block">万円</span>
+            <input type="number" name="monthly_rent_income" id="monthly_rent_income" class="rounded border-0 input-item py-2 px-3" value=100.0><span class="ml-1 d-inline-block">万円</span>
           </div>
           <div class="d-flex justify-content-between mb-3 pb-3 pb-md-5 border-bottom">
             <label>年間家賃収入 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -193,7 +193,7 @@
                 </div>
               </div>
             </label>
-            <p class="ml-auto">1200.0</p><span class="ml-3 d-inline-block">万円</span>
+            <p class="ml-auto" id="annual_rent_income">1200.0</p><span class="ml-3 d-inline-block">万円</span>
           </div>
           <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
             <label>経費率 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -209,7 +209,7 @@
                 </div>
               </div>
             </label>
-            <input type="tel" name="expense" id="expense" class="rounded border-0 input-item py-2 px-3" value=30.0><span class="ml-1 d-inline-block">%</span>
+            <input type="number" name="expense" id="expense" class="rounded border-0 input-item py-2 px-3" value=30.0><span class="ml-1 d-inline-block">%</span>
           </div>
           <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
             <label>空室率 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -222,7 +222,7 @@
                 </div>
               </div>
             </label>
-            <input type="tel" name="vacancy" id="vacancy" class="rounded border-0 input-item py-2 px-3" value=10.0><span class="ml-1 d-inline-block">%</span>
+            <input type="number" name="vacancy" id="vacancy" class="rounded border-0 input-item py-2 px-3" value=10.0><span class="ml-1 d-inline-block">%</span>
           </div>
           <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
             <label>年間手取り <span class="material-icons-outlined question-icon">help_outline</span>
@@ -236,7 +236,7 @@
                 </div>
               </div>
             </label>
-            <p class="ml-auto">720.0</p><span class="ml-3 d-inline-block">万円</span>
+            <p class="ml-auto" id="annual_take_home">720.0</p><span class="ml-3 d-inline-block">万円</span>
           </div>
           <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
             <label>表面利回り <span class="material-icons-outlined question-icon">help_outline</span>
@@ -251,7 +251,7 @@
                 </div>
               </div>
             </label>
-            <p class="ml-auto accent pl-1">0.0</p><span class="ml-3 d-inline-block">%</span>
+            <p class="ml-auto accent pl-1" id="surface_yield">0.0</p><span class="ml-3 d-inline-block">%</span>
           </div>
           <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
             <label>実質利回り <span class="material-icons-outlined question-icon">help_outline</span>
@@ -266,7 +266,7 @@
                 </div>
               </div>
             </label>
-            <p class="ml-auto accent pl-1">0.0</p><span class="ml-3 d-inline-block">%</span>
+            <p class="ml-auto accent pl-1" id="real_yield">0.0</p><span class="ml-3 d-inline-block">%</span>
           </div>
           <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
             <label>税引き前CF <span class="material-icons-outlined question-icon">help_outline</span>
@@ -280,7 +280,7 @@
                 </div>
               </div>
             </label>
-            <p class="ml-auto accent pl-1">0.0</p><span class="ml-3 d-inline-block">万円</span>
+            <p class="ml-auto accent pl-1" id="before_tax_CF">0.0</p><span class="ml-3 d-inline-block">万円</span>
           </div>
           <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
             <label class="tax">税率<span class="tax-option ml-1">(所得税、住民税)</span> <span class="material-icons-outlined question-icon">help_outline</span>
@@ -294,7 +294,7 @@
                 </div>
               </div>
             </label>
-            <input type="tel" name="tax" id="tax" class="rounded border-0 input-item py-2 px-3" value=30.0><span class="ml-1 d-inline-block">%</span>
+            <input type="number" name="tax" id="tax" class="rounded border-0 input-item py-2 px-3" value=30.0><span class="ml-1 d-inline-block">%</span>
           </div>
           <div class="d-flex justify-content-between">
             <label>税引き後CF <span class="material-icons-outlined question-icon">help_outline</span>
@@ -307,7 +307,7 @@
                 </div>
               </div>
             </label>
-            <p class="ml-auto">0.0</p><span class="ml-3 d-inline-block">万円</span>
+            <p class="ml-auto" id="after_tax_CF">0.0</p><span class="ml-3 d-inline-block">万円</span>
           </div>
         </div>
         <div class="form-item p-3 p-md-4">
@@ -323,7 +323,7 @@
                 </div>
               </div>
             </label>
-            <input type="tel" name="ownership_period" id="ownership_period" class="rounded border-0 input-item py-2 px-3" value=35.0><span class="ml-1 d-inline-block">年</span>
+            <input type="number" name="ownership_period" id="ownership_period" class="rounded border-0 input-item py-2 px-3" value=35.0><span class="ml-1 d-inline-block">年</span>
           </div>
           <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
             <label>売却価格 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -336,7 +336,7 @@
                 </div>
               </div>
             </label>
-            <input type="tel" name="sale_price" id="sale_price" class="rounded border-0 input-item py-2 px-3" value=2.0><span class="ml-1 d-inline-block">万円</span>
+            <input type="number" name="sale_price" id="sale_price" class="rounded border-0 input-item py-2 px-3" value=2.0><span class="ml-1 d-inline-block">万円</span>
           </div>
           <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
             <label>売却手数料率 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -356,7 +356,7 @@
                 </div>
               </div>
             </label>
-            <input type="tel" name="sale_commission" id="sale_commission" class="rounded border-0 input-item py-2 px-3" value=3.0><span class="ml-1 d-inline-block">%</span>
+            <input type="number" name="sale_commission" id="sale_commission" class="rounded border-0 input-item py-2 px-3" value=3.0><span class="ml-1 d-inline-block">%</span>
           </div>
           <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
             <label>譲渡所得税 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -376,7 +376,7 @@
                 </div>
               </div>
             </label>
-            <p class="ml-auto pl-1">0.0</p><span class="ml-3 d-inline-block">万円</span>
+            <p class="ml-auto pl-1" id="transfer_income_tax">0.0</p><span class="ml-3 d-inline-block">万円</span>
           </div>
           <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
             <label>売却総額 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -389,7 +389,7 @@
                 </div>
               </div>
             </label>
-            <p class="ml-auto pl-1">0.0</p><span class="ml-3 d-inline-block">万円</span>
+            <p class="ml-auto pl-1" id="total_sale">0.0</p><span class="ml-3 d-inline-block">万円</span>
           </div>
           <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
             <label>税引き後CF累計 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -402,7 +402,7 @@
                 </div>
               </div>
             </label>
-            <p class="ml-auto pl-1">0.0</p><span class="ml-3 d-inline-block">万円</span>
+            <p class="ml-auto pl-1" id="cumulative_after_tax_CF">0.0</p><span class="ml-3 d-inline-block">万円</span>
           </div>
           <div class="d-flex justify-content-between">
             <label class="cumulative_tax">税引き後CF累計<span class="tax-option">(売却含む)</span><br><span class="material-icons-outlined question-icon">help_outline</span>
@@ -415,7 +415,7 @@
                 </div>
               </div>
             </label>
-            <p class="ml-auto pl-1 minus">-310.0</p><span class="ml-3 d-inline-block">万円</span>
+            <p class="ml-auto pl-1 minus" id="include_sale_cumulative_after_tax_CF">-310.0</p><span class="ml-3 d-inline-block">万円</span>
           </div>
         </div>
         <div class="form-item p-3 p-md-4">
@@ -426,7 +426,7 @@
           </div>
           <div class="d-flex justify-content-between mb-3 pb-3 pb-md-5 border-bottom">
             <label for="age">築年数</label>
-            <input type="tel" name="age" id="age" class="rounded border-0 input-item py-2 px-3 text-left"><span class="ml-1 d-inline-block">年</span>
+            <input type="number" name="age" id="age" class="rounded border-0 input-item py-2 px-3"><span class="ml-1 d-inline-block">年</span>
           </div>
           <div class="d-flex justify-content-between">
             <label for="note">メモ</label>
@@ -450,7 +450,7 @@
     </section>
 
     <div class="ad-display mx-auto mb-3 mb-md-4 text-center container">
-      <a href="{{ $ad_top->link }}" class="d-inline-block mx-auto"><img src="{{ asset($ad_bottom->file_path) }}"></a>
+      <a href="{{ $ad_bottom->link }}" class="d-inline-block mx-auto"><img src="{{ asset($ad_bottom->file_path) }}"></a>
     </div>
 
     <a href="#header" class="return-top_btn hidden">
@@ -466,5 +466,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
     <!-- main.js -->
     <script src="{{ mix('js/main.js') }}"></script>
+    <!-- input_limit.js -->
+    <script src="{{ mix('js/input_limit.js') }}"></script>
+    <!-- calculate.js -->
+    <script src="{{ mix('js/calculate.js') }}"></script>
   </body>
 </html>

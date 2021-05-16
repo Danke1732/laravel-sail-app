@@ -18,7 +18,7 @@ class AdminCheck
     {
         // セッションの値を確認
         if (true == $request->session()->get("admin_auth")) {
-            return redirect()->route('admin.home');
+            return redirect()->route('admin.ads_list');
         }
         return $next($request);
     }

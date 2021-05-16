@@ -245,4 +245,12 @@ body {
   .main-tool form .form-item .input-item {
     font-size: 1.2rem;
   }
+  .main-tool form .user-support .choice,
+.main-tool form .user-support-fixed .choice {
+    font-size: 1.2rem;
+    width: 200px;
+  }
+  .main-tool form .user-support-fixed {
+    padding: 18px 0;
+  }
 }

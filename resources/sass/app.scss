@@ -212,7 +212,7 @@ body {
     .user-support-fixed {
       height: 80px;
       background: rgba(0, 0, 0, 0.3);
-      padding: 22px 0; 
+      padding: 22px 0;
 
       .choice {
         color: #fff;
@@ -334,6 +334,19 @@ body {
           font-size: 1.2rem;
         }
 
+      }
+
+      .user-support,
+      .user-support-fixed {
+
+        .choice {
+          font-size: 1.2rem;
+          width: 200px;
+        }
+      }
+
+      .user-support-fixed {
+        padding: 18px 0;
       }
     }
   }

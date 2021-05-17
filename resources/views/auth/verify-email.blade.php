@@ -1,3 +1,6 @@
+@extends('layouts.layout')
+@section('site_title', 'Eメール確認')
+@section('content')
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
@@ -37,3 +40,4 @@
         </div>
     </x-auth-card>
 </x-guest-layout>
+@endsection

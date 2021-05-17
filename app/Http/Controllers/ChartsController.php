@@ -16,12 +16,20 @@ class ChartsController extends Controller
     {
         // ランダムな上部広告をViewへ渡す
         $ads_top_lists = Ad::where('location', 0)->get();
-        $random_key = rand(0, (count($ads_top_lists) - 1));
-        $ad_top = $ads_top_lists[$random_key];
+        if (!empty($ads_top_lists[0])) {
+            $random_key = rand(0, (count($ads_top_lists) - 1));
+            $ad_top = $ads_top_lists[$random_key];
+        } else {
+            $ad_top = null;
+        }
         // ランダムな下部広告をViewへ渡す
         $ads_bottom_lists = Ad::where('location', 1)->get();
-        $random_key = rand(0, (count($ads_bottom_lists) - 1));
-        $ad_bottom = $ads_bottom_lists[$random_key];
+        if (!empty($ads_bottom_lists[0])) {
+            $random_key = rand(0, (count($ads_bottom_lists) - 1));
+            $ad_bottom = $ads_bottom_lists[$random_key];
+        } else {
+            $ad_bottom = null;
+        }
 
         return view("home", ["ad_top" => $ad_top, "ad_bottom" => $ad_bottom]);
     }

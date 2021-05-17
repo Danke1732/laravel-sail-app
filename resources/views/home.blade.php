@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>ホーム | 不動産投資利回りシュミレーションツール｜ローンや経費を一括自動計算</title>
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
@@ -25,9 +25,11 @@
       <p>下部に自動的に利回りシミュレーション結果が表示されます。</p>
     </section>
 
+    @if ($ad_top != null)
     <div class="ad-display mx-auto mb-3 mb-md-4 text-center container">
       <a href="{{ $ad_top->link }}" class="d-inline-block mx-auto"><img src="{{ asset($ad_top->file_path) }}"></a>
     </div>
+    @endif
 
     <section class="container-fluid mx-auto p-0 pb-3 pb-md-4 main-tool">
       <form action="" method="" onsubmit="return false;">
@@ -453,9 +455,11 @@
       </form>
     </section>
 
+    @if ($ad_bottom != null)
     <div class="ad-display mx-auto mb-3 mb-md-4 text-center container">
       <a href="{{ $ad_bottom->link }}" class="d-inline-block mx-auto"><img src="{{ asset($ad_bottom->file_path) }}"></a>
     </div>
+    @endif
 
     <a href="#header" class="return-top_btn hidden">
       <i class="fas fa-chevron-up"></i>

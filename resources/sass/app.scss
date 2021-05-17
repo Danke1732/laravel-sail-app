@@ -53,7 +53,7 @@ body {
   button {
     color: $color-white !important;
     border: 1px solid $color-white !important;
-    
+
     &:focus {
       box-shadow: none;
       opacity: 0.8;
@@ -61,8 +61,31 @@ body {
   }
 
   #navbarNav {
-    ul > li a {
-      color: $color-white;
+    ul {
+
+      li {
+
+        .logout {
+          border-color: transparent !important;
+          border-top-width: 2px;
+          border-bottom-width: 2px;
+          border-style: solid;
+          font-size: 14px;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+
+        a {
+          color: $color-white;
+          font-size: 14px;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
     }
   }
 }
@@ -291,7 +314,41 @@ body {
   // ヘッダーレスポンシブ
   .header-bg {
     .site-logo {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
+    }
+
+    button {
+
+      span {
+        font-size: 20px;
+      }
+    }
+
+    #navbarNav {
+      ul {
+  
+        li {
+  
+          .logout {
+            font-size: 16px;
+          }
+
+          a {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  #heading {
+
+    h1 {
+      font-size: 1.4rem;
+    }
+
+    p {
+      font-size: 1rem;
     }
   }
 

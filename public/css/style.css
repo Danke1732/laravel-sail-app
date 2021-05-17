@@ -36,8 +36,22 @@ body {
   box-shadow: none;
   opacity: 0.8;
 }
-.header-bg #navbarNav ul > li a {
+.header-bg #navbarNav ul li .logout {
+  border-color: transparent !important;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+  border-style: solid;
+  font-size: 14px;
+}
+.header-bg #navbarNav ul li .logout:hover {
+  opacity: 0.8;
+}
+.header-bg #navbarNav ul li a {
   color: #fff;
+  font-size: 14px;
+}
+.header-bg #navbarNav ul li a:hover {
+  opacity: 0.8;
 }
 
 #heading h1 {
@@ -213,7 +227,23 @@ body {
 
 @media (min-width: 760px) {
   .header-bg .site-logo {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+  }
+  .header-bg button span {
+    font-size: 20px;
+  }
+  .header-bg #navbarNav ul li .logout {
+    font-size: 16px;
+  }
+  .header-bg #navbarNav ul li a {
+    font-size: 16px;
+  }
+
+  #heading h1 {
+    font-size: 1.4rem;
+  }
+  #heading p {
+    font-size: 1rem;
   }
 
   .main-tool {

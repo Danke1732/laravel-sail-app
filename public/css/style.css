@@ -139,6 +139,14 @@ body {
   text-align: right;
   height: 50px;
 }
+.main-tool form .form-item input[type=number]::-webkit-outer-spin-button,
+.main-tool form .form-item input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.main-tool form .form-item input[type=number] {
+  -moz-appearance: textfield;
+}
 .main-tool form .user-support .choice {
   color: #fff;
   background: #00a9f1;

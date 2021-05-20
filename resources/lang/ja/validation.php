@@ -131,5 +131,26 @@ return [
         'name' => '名前',
         'email' => 'メールアドレス',
         'password' => 'パスワード',
+
+        'property_price' => '物件価格',
+        'purchase_fee' => '購入手数料',
+        'borrowing_amount' => '借入金額',
+        'annual_interest' => '年間利息',
+        'borrowing_period' => '借入期間',
+        'monthly_rent_income' => '月家賃収入',
+        'expense' => '経費率',
+        'vacancy' => '空室率',
+        'tax' => '税率',
+        'ownership_period' => '所有期間',
+        'sale_price' => '売却価格',
+        'sale_commission' => '売却手数料率',
+
+        'property_name' => '物件名',
+        'age' => '築年数',
+        'note' => 'メモ',
+
+        'image1' => '画像１',
+        'image2' => '画像２',
+        'image3' => '画像３',
     ],
 ];

@@ -4,6 +4,7 @@
     "/js/admin.js": "/js/admin.js",
     "/js/input_limit.js": "/js/input_limit.js",
     "/js/calculate.js": "/js/calculate.js",
+    "/js/image_review.js": "/js/image_review.js",
     "/css/app.css": "/css/app.css",
     "/css/admin.css": "/css/admin.css",
     "/css/signin.css": "/css/signin.css",

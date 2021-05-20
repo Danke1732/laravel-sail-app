@@ -25,9 +25,9 @@ use App\Http\Controllers\ChartsController;
 Route::get('/', [ChartsController::class, 'showCalculate'])->name('calculate');
 
 // 一般ユーザーログイン済みのミドルウェア
-// Route::middleware(['auth'])->group(function () {
-
-// });
+Route::middleware(['auth'])->group(function () {
+    Route::post('/calc_store', [ChartsController::class, 'exeStore'])->name('exeStore');
+});
 
 //  -- 管理者ユーザーミドルウェア --
 // 管理者ユーザーログイン時のミドルウェア

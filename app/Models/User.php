@@ -12,6 +12,14 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
 
     /**
+     * ユーザーの計算情報を取得
+     */
+    public function charts()
+    {
+        return $this->hasMany(Chart::class);
+    }
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array

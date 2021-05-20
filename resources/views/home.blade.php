@@ -27,7 +27,7 @@
 
     @if ($ad_top != null)
     <div class="ad-display mx-auto mb-3 mb-md-4 text-center container">
-      <a href="{{ $ad_top->link }}" class="d-inline-block mx-auto"><img src="{{ asset($ad_top->file_path) }}"></a>
+      <a href="{{ $ad_top->link }}" target="_blank" rel="nofollow noopener" class="d-inline-block mx-auto"><img src="{{ asset($ad_top->file_path) }}"></a>
     </div>
     @endif
 
@@ -457,7 +457,7 @@
 
     @if ($ad_bottom != null)
     <div class="ad-display mx-auto mb-3 mb-md-4 text-center container">
-      <a href="{{ $ad_bottom->link }}" class="d-inline-block mx-auto"><img src="{{ asset($ad_bottom->file_path) }}"></a>
+      <a href="{{ $ad_bottom->link }}" target="_blank" rel="nofollow noopener" class="d-inline-block mx-auto"><img src="{{ asset($ad_bottom->file_path) }}"></a>
     </div>
     @endif
 

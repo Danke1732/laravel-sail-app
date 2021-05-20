@@ -9,3 +9,5 @@
 <script src="{{ mix('js/input_limit.js') }}"></script>
 <!-- calculate.js -->
 <script src="{{ mix('js/calculate.js') }}"></script>
+<!-- image_review.js -->
+<script src="{{ mix('js/image_review.js') }}"></script>

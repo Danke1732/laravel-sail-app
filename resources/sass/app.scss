@@ -132,6 +132,10 @@ body {
         line-height: 50px;
       }
 
+      p {
+        font-size: 0.9rem;
+      }
+
       label {
         font-size: 0.9rem;
         font-weight: bold;
@@ -181,7 +185,6 @@ body {
         }
       }
 
-
       label.tax,
       label.cumulative_tax {
         line-height: normal;
@@ -216,6 +219,74 @@ body {
         text-align: right;
         height: 50px;
       }
+
+      input[type="number"]::-webkit-outer-spin-button, 
+      input[type="number"]::-webkit-inner-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+      }
+
+      input[type="number"] { 
+        -moz-appearance:textfield; 
+      } 
+
+      .image-form {
+
+        .images {
+
+          label {
+            line-height: normal;
+            display: inline-block;
+            border-radius: 10px;
+            border: 3px solid #dee2e6;
+            color: rgba(153, 153, 153, 0.6);
+            background: rgba(73, 66, 66, 0.1);
+            cursor: pointer;
+          }
+
+          .image-view {
+            width: 68.72px;
+            height: 66px;
+            vertical-align: bottom;
+            cursor: pointer;
+            position: relative;
+
+            img {
+              width: auto;
+              height: 100%;
+              object-fit: cover;
+            }
+
+            span {
+              position: absolute;
+              top: 2px;
+              right: 2px;
+              z-index: 200;
+              width: auto;
+              height: auto;
+              border-radius: 50%;
+              background: #fff;
+              line-height: normal;
+              font-size: 1.2rem;
+              transition: opacity 0.3s;
+              
+              &:hover {
+                opacity: 0.9;
+                transition: opacity 0.3s;
+              }
+            }
+          }
+
+          // .option-image-label:nth-child(1) {
+          //   display: none !important;
+          // }
+          
+          input[type="file"] {
+            display: none;
+          }
+        }
+      }
+
     }
 
     .user-support {
@@ -241,10 +312,10 @@ body {
         color: #fff;
         background: $color-main;
         border: 1px solid #fff;
-        box-shadow: 0 4px 0 $color-main;
+        box-shadow: 0 4px 0 #0080b6;
 
         &:active {
-          box-shadow: 0 1px 0 $color-main;
+          box-shadow: 0 1px 0 #0080b6;
           position: relative;
           top: 2px;
         }
@@ -257,6 +328,41 @@ body {
 
       // }
     }
+  }
+}
+
+#mask {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+// 画像クリック時の表示クラス内容
+#mask.visible {
+  opacity: 1.0;
+  z-index: 1050;
+}
+
+// 画像のプレビューモーダル
+#image-detail {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 600px;
+  z-index: 1060;
+
+  img {
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -304,7 +410,7 @@ body {
 
 // 表示隠す用クラス
 .hidden {
-  display: none;
+  display: none !important;
   transition: all 0.4s;
   user-select: none;
   pointer-events: none;
@@ -389,6 +495,27 @@ body {
 
         .input-item {
           font-size: 1.2rem;
+        }
+
+        .image-form {
+
+          .images {
+  
+            .image-view {
+              width: 100.3px;
+              height: 96px;
+  
+              // img {
+              //   width: auto;
+              //   height: 100%;
+              //   object-fit: cover;
+              // }
+  
+              span {
+                font-size: 1.4rem;
+              }
+            }
+          }
         }
 
       }

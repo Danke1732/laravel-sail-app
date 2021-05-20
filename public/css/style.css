@@ -82,6 +82,9 @@ body {
   color: #333;
   line-height: 50px;
 }
+.main-tool form .form-item p {
+  font-size: 0.9rem;
+}
 .main-tool form .form-item label {
   font-size: 0.9rem;
   font-weight: bold;
@@ -153,6 +156,56 @@ body {
   text-align: right;
   height: 50px;
 }
+.main-tool form .form-item input[type=number]::-webkit-outer-spin-button,
+.main-tool form .form-item input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.main-tool form .form-item input[type=number] {
+  -moz-appearance: textfield;
+}
+.main-tool form .form-item .image-form .images label {
+  line-height: normal;
+  display: inline-block;
+  border-radius: 10px;
+  border: 3px solid #dee2e6;
+  color: rgba(153, 153, 153, 0.6);
+  background: rgba(73, 66, 66, 0.1);
+  cursor: pointer;
+}
+.main-tool form .form-item .image-form .images .image-view {
+  width: 68.72px;
+  height: 66px;
+  vertical-align: bottom;
+  cursor: pointer;
+  position: relative;
+}
+.main-tool form .form-item .image-form .images .image-view img {
+  width: auto;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.main-tool form .form-item .image-form .images .image-view span {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  z-index: 200;
+  width: auto;
+  height: auto;
+  border-radius: 50%;
+  background: #fff;
+  line-height: normal;
+  font-size: 1.2rem;
+  transition: opacity 0.3s;
+}
+.main-tool form .form-item .image-form .images .image-view span:hover {
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+.main-tool form .form-item .image-form .images input[type=file] {
+  display: none;
+}
 .main-tool form .user-support .choice {
   color: #fff;
   background: #00a9f1;
@@ -170,12 +223,44 @@ body {
   color: #fff;
   background: #00a9f1;
   border: 1px solid #fff;
-  box-shadow: 0 4px 0 #00a9f1;
+  box-shadow: 0 4px 0 #0080b6;
 }
 .main-tool form .user-support-fixed .choice:active {
-  box-shadow: 0 1px 0 #00a9f1;
+  box-shadow: 0 1px 0 #0080b6;
   position: relative;
   top: 2px;
+}
+
+#mask {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -1;
+}
+
+#mask.visible {
+  opacity: 1;
+  z-index: 1050;
+}
+
+#image-detail {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 600px;
+  z-index: 1060;
+}
+#image-detail img {
+  width: 100%;
+  height: auto;
 }
 
 .return-top_btn {
@@ -216,7 +301,7 @@ body {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
   transition: all 0.4s;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -274,6 +359,13 @@ body {
   }
   .main-tool form .form-item .input-item {
     font-size: 1.2rem;
+  }
+  .main-tool form .form-item .image-form .images .image-view {
+    width: 100.3px;
+    height: 96px;
+  }
+  .main-tool form .form-item .image-form .images .image-view span {
+    font-size: 1.4rem;
   }
   .main-tool form .user-support .choice,
 .main-tool form .user-support-fixed .choice {

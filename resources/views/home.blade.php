@@ -7,12 +7,27 @@
     <p>下部に自動的に利回りシミュレーション結果が表示されます。</p>
   </section>
 
+  @if ($ad_top != null)
   <div class="ad-display mx-auto mb-3 mb-md-4 text-center container">
-    <a href="{{ $ad_top->link }}" class="d-inline-block mx-auto"><img src="{{ asset($ad_top->file_path) }}"></a>
+    <a href="{{ $ad_top->link }}" target="_blank" rel="nofollow noopener" class="d-inline-block mx-auto"><img src="{{ asset($ad_top->file_path) }}"></a>
   </div>
+  @endif
+
+  @if ($errors->any())
+    <div>
+      <ul class="list-group list-group-flush">
+        @foreach ($errors->all() as $error)
+          <li class="list-group-item list-group-item-danger py-3 text-center">{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+  @endif
+  <x-alert type="danger" :session="session('danger')"/>
+  <x-alert type="success" :session="session('success')"/>
 
   <section class="container-fluid mx-auto p-0 pb-3 pb-md-4 main-tool">
-    <form action="" method="" onsubmit="return false;">
+    <form action="{{ route('exeStore') }}" method="POST" enctype="multipart/form-data" onsubmit="return false;">
+    @csrf
       <div class="form-item p-3 p-md-4">
         <h1 class="heading_title mb-4">購入価格項目を入力してください。</h1>
         <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
@@ -410,10 +425,30 @@
           <label for="age">築年数</label>
           <input type="number" name="age" id="age" class="rounded border-0 input-item py-2 px-3"><span class="ml-1 d-inline-block">年</span>
         </div>
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
           <label for="note">メモ</label>
           <textarea name="note" id="note" maxlength="200" class="rounded border-0 input-item py-2 px-3 text-left"></textarea>
         </div>
+        <div class="d-flex justify-content-between image-form pb-3 pb-md-4 ">
+          <label for="note">画像</label>
+          <div class="images">
+
+            <label for="image1" class="text-center d-inline-block p-2 p-md-3 ml-md-2 option-image-label">No <br>image</label>
+            <div class="image-view d-inline-block mr-1 hidden" id="image-view1"></div>
+            <input type="file" name="image1" id="image1" class="option-image">
+
+            <label for="image2" class="text-center d-inline-block p-2 p-md-3 ml-md-2 option-image-label">No <br>image</label>
+            <div class="image-view d-inline-block mr-1 hidden" id="image-view2"></div>
+            <input type="file" name="image2" id="image2" class="option-image">
+
+            <label for="image3" class="text-center d-inline-block p-2 p-md-3 ml-md-2 option-image-label">No <br>image</label>
+            <div class="image-view d-inline-block mr-1 hidden" id="image-view3"></div>
+            <input type="file" name="image3" id="image3" class="option-image">
+
+          </div>
+        @if (Auth::check())
+        <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+        @endif
       </div>
 
       <div class="form-item user-support border-top py-4">
@@ -435,9 +470,16 @@
     </form>
   </section>
 
+  <div id="mask"></div>
+
+  <div class="image-detail px-1 hidden" id="image-detail"></div>
+
+
+  @if ($ad_bottom != null)
   <div class="ad-display mx-auto mb-3 mb-md-4 text-center container">
-    <a href="{{ $ad_bottom->link }}" class="d-inline-block mx-auto"><img src="{{ asset($ad_bottom->file_path) }}"></a>
+    <a href="{{ $ad_bottom->link }}" target="_blank" rel="nofollow noopener" class="d-inline-block mx-auto"><img src="{{ asset($ad_bottom->file_path) }}"></a>
   </div>
+  @endif
 
   <a href="#header" class="return-top_btn hidden">
     <i class="fas fa-chevron-up"></i>

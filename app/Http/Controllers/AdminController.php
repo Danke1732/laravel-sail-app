@@ -28,9 +28,9 @@ class AdminController extends Controller
         }
 
         // ログイン失敗
-        // return back()->withErrors([
-        //     'danger' => '管理者IDもしくはパスワードが間違っています。',
-        // ]);
+        return back()->withErrors([
+            'danger' => 'ログイン失敗 : ID/PWを確認してください。',
+        ]);
     }
 
     /**

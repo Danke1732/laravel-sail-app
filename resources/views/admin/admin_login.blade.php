@@ -20,6 +20,16 @@
 </head>
 <body>
 <div class="form-wrapper shadow-sm">
+  @if ($errors->any())
+    <div>
+      <ul class="list-group list-group-flush">
+        @foreach ($errors->all() as $error)
+          <li class="list-group-item list-group-item-danger py-3 text-center">{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+  @endif
+  <x-alert type="danger" :session="session('danger')"/>
   <h1>Admin Sign In</h1>
   <form action="{{ route('admin.login') }}" method="POST" autocomplete="off">
     @csrf

@@ -83,3 +83,12 @@ form {
 .form-footer a:hover {
   border-bottom: 1px dotted #8c8c8c;
 }
+
+@media (max-width: 370px) {
+  .form-wrapper {
+    background: #fafafa;
+    margin: 3em auto;
+    padding: 2em 0;
+    max-width: 370px;
+  }
+}

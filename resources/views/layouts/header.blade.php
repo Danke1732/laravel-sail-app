@@ -17,6 +17,9 @@
               <button type="submit" class="btn logout d-block px-0 px-lg-2 w-100 text-left">ログアウト</button>
              </form>
           </li>
+          <li class="nav-item">
+            <button id="withdraw" class="btn logout d-block px-0 px-lg-2 w-100 text-left" data-bs-toggle="modal" data-bs-target="#exampleModal">退会</button>
+          </li>
           @else
           <li class="nav-item">
             <a class="nav-link" href="{{ route('login') }}">ログイン</a>
@@ -30,3 +33,26 @@
     </div>
   </nav>
 </header>
+
+@if (Auth::check())
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">退会処理</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        記録されている過去の計算データも削除されます。<br />
+        <br />
+        退会してもよろしいですか？
+      </div>
+      <form action="/user/withdraw/{{ Auth::id() }}" method="POST" class="modal-footer">
+        @csrf
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">戻る</button>
+        <button type="submit" class="btn btn-danger">退会する</button>
+      </form>
+    </div>
+  </div>
+</div>
+@endif

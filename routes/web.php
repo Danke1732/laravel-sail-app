@@ -48,6 +48,8 @@ Route::group(['middleware' => ['auth.admin']], function () {
     })->name('admin.ads_new');
     // 管理者広告一覧表示
     Route::get('admin/ads_list', [AdminController::class, 'ads_list'])->name('admin.ads_list');
+    // 管理者ユーザー一覧表示
+    Route::get('admin/user_list', [AdminController::class, 'user_list'])->name('admin.user_list');
     // 管理者広告編集ページ表示
     Route::get('admin/ads_edit/{id}', [AdminController::class, 'ads_edit'])->name('admin.ads_edit');
 

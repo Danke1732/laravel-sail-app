@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ChartsController;
+use App\Http\Controllers\UsersController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +29,7 @@ Route::get('/', [ChartsController::class, 'showCalculate'])->name('calculate');
 // 一般ユーザーログイン済みのミドルウェア
 Route::middleware(['auth'])->group(function () {
     Route::post('/calc_store', [ChartsController::class, 'exeStore'])->name('exeStore');
+    Route::post('/user/withdraw/{id}', [UsersController::class, 'userWithdraw'])->name('user_withdraw');
 });
 
 //  -- 管理者ユーザーミドルウェア --

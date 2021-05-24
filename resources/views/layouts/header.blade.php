@@ -9,7 +9,7 @@
         <ul class="navbar-nav ml-auto">
           @if (Auth::check())
           <li class="nav-item">
-            <a class="nav-link" href="#">過去の計算結果</a>
+            <a class="nav-link" href="/user/{{ Auth::id() }}">過去の計算結果</a>
           </li>
           <li class="nav-item">
             <form action="{{ route('logout') }}" method="POST">

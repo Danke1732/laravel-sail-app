@@ -20,7 +20,7 @@ class Chart extends Model
     /**
      * 計算表に結びつく複数の画像を取得
      */
-    public function chart_image()
+    public function chart_images()
     {
         return $this->hasMany(ChartImage::class);
     }

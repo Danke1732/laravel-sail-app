@@ -12,17 +12,22 @@ function returnTop() {
 window.addEventListener('DOMContentLoaded', returnTop);
 
 function userSelectWindow() {
-  const fixedItem = document.querySelector('.user-support-fixed');
-  const normalItem = document.querySelector('.user-support');
-  let clientRect = normalItem.getBoundingClientRect();
+  try {
+    const fixedItem = document.querySelector('.user-support-fixed');
+    const normalItem = document.querySelector('.user-support');
+    let clientRect = normalItem.getBoundingClientRect();
 
-  window.addEventListener('scroll', () => {
-    if (200 < window.scrollY && ((clientRect.top - window.innerHeight) > window.scrollY)) {
-      fixedItem.classList.remove('hidden');
-    } else {
-      fixedItem.classList.add('hidden');
-    }
-  });
+    window.addEventListener('scroll', () => {
+      if (200 < window.scrollY && ((clientRect.top - window.innerHeight) > window.scrollY)) {
+        fixedItem.classList.remove('hidden');
+      } else {
+        fixedItem.classList.add('hidden');
+      }
+    });
+  } catch(e) {
+    console.log();
+  }
+  
 }
 window.addEventListener('DOMContentLoaded', userSelectWindow);
 

@@ -13,3 +13,5 @@
 <script src="{{ mix('js/image_review.js') }}"></script>
 <!-- image_review.js -->
 <script src="{{ mix('js/card_list.js') }}"></script>
+<!-- calculate_edit.js -->
+<script src="{{ mix('js/calculate_edit.js') }}"></script>

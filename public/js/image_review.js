@@ -24,6 +24,7 @@ window.addEventListener('DOMContentLoaded', function () {
       var span = document.createElement('span');
       image.setAttribute('src', blob);
       image.setAttribute('class', 'review-image');
+      image.setAttribute('id', 'image-review1');
       span.setAttribute('class', 'fas fa-times-circle d-inline-block delete1');
       imageView1.appendChild(image);
       imageView1.appendChild(span);
@@ -43,6 +44,7 @@ window.addEventListener('DOMContentLoaded', function () {
       var span = document.createElement('span');
       image.setAttribute('src', blob);
       image.setAttribute('class', 'review-image');
+      image.setAttribute('id', 'image-review2');
       span.setAttribute('class', 'fas fa-times-circle d-inline-block delete2');
       imageView2.appendChild(image);
       imageView2.appendChild(span);
@@ -62,6 +64,7 @@ window.addEventListener('DOMContentLoaded', function () {
       var span = document.createElement('span');
       image.setAttribute('src', blob);
       image.setAttribute('class', 'review-image');
+      image.setAttribute('id', 'image-review3');
       span.setAttribute('class', 'fas fa-times-circle d-inline-block delete3');
       imageView3.appendChild(image);
       imageView3.appendChild(span);

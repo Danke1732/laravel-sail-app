@@ -51,6 +51,7 @@ class UsersController extends Controller
                     $result = $calc->return_calculate($calculate);
                     $date = mb_substr($calculate->updated_at, 0, 10);
                     $result['updated_at'] = new Carbon($date);
+                    $result['id'] = $calculate->id;
                     // 物件価格があれば配列に代入
                     if (!empty($calculate->option['property_name'])) {
                         $result['property_name'] = $calculate->option['property_name'];

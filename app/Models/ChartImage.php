@@ -22,5 +22,6 @@ class ChartImage extends Model
         'image_name',
         'image_path',
         'chart_id',
+        'location',
     ];
 }

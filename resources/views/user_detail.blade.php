@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('site_title', 'ホーム')
+@section('site_title', '履歴一覧')
 @section('content')
   <section class="container heading py-4" id="heading">
     <h1 class="mb-4">不動産投資利回りシミュレーション履歴一覧</h1>
@@ -26,13 +26,12 @@
   <x-alert type="success" :session="session('success')"/>
 
   <main role="main">
-    <x-alert type="success" :session="session('success')"/>
     <div class="album py-md-4 bg-light">
       <div class="container">
         <div class="row">
           @if ($result_calculates != null)
           @foreach ($result_calculates as $calculate)
-          <a href="#" class="col-md-6 col-xl-4 mb-2 mb-md-4 calc-card px-0 px-sm-2">
+          <a href="/chart/{{ $calculate['id'] }}" class="col-md-6 col-xl-4 mb-2 mb-md-4 calc-card px-0 px-sm-2">
             <?php $week = array( "日", "月", "火", "水", "木", "金", "土" ); ?>
             <p class="p-2 mb-2 mb-md-0 date">{{ $calculate['updated_at']->format('Y年m月d日') }} (<?= $week[date("w", strtotime($calculate['updated_at']))];?>)</p>
             <div class="card mx-2 mx-sm-0">

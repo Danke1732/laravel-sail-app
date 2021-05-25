@@ -6,6 +6,7 @@
     "/js/calculate.js": "/js/calculate.js",
     "/js/image_review.js": "/js/image_review.js",
     "/js/card_list.js": "/js/card_list.js",
+    "/js/calculate_edit.js": "/js/calculate_edit.js",
     "/css/app.css": "/css/app.css",
     "/css/admin.css": "/css/admin.css",
     "/css/signin.css": "/css/signin.css",

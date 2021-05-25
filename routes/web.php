@@ -29,8 +29,11 @@ Route::get('/', [ChartsController::class, 'showCalculate'])->name('calculate');
 // 一般ユーザーログイン済みのミドルウェア
 Route::middleware(['auth'])->group(function () {
     Route::post('/calc_store', [ChartsController::class, 'exeStore'])->name('exeStore');
+    Route::post('/calc_update/{id}', [ChartsController::class, 'exeUpdate'])->name('exeUpdate');
     Route::get('/user/{id}', [UsersController::class, 'userDetail'])->name('user_detail');
     Route::post('/user/withdraw/{id}', [UsersController::class, 'userWithdraw'])->name('user_withdraw');
+    Route::get('/chart/{id}', [ChartsController::class, 'chartEdit'])->name('chart_edit');
+
 });
 
 //  -- 管理者ユーザーミドルウェア --

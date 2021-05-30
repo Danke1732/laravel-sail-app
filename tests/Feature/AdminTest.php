@@ -38,6 +38,10 @@ class AdminTest extends TestCase
         $response = $this->get(route('admin.ads_list'));
         $response->assertStatus(302)->assertRedirect(route('admin.showLogin'));
 
+        // ユーザー一覧画面への遷移テスト(ログイン未)
+        $response = $this->get(route('admin.user_list'));
+        $response->assertStatus(302)->assertRedirect(route('admin.showLogin'));
+
         // 広告編集フォーム画面への遷移テスト(ログイン未)
         $response = $this->get('/admin/ads_edit/1');
         $response->assertStatus(302)->assertRedirect(route('admin.showLogin'));
@@ -55,6 +59,10 @@ class AdminTest extends TestCase
         // 広告一覧画面への遷移テスト(ログイン済み)
         $response = $this->withSession(['admin_auth' => true])->get(route('admin.ads_list'));
         $response->assertStatus(200)->assertViewIs('admin.ads_list');
+
+        // 広告一覧画面への遷移テスト(ログイン済み)
+        $response = $this->withSession(['admin_auth' => true])->get(route('admin.user_list'));
+        $response->assertStatus(200)->assertViewIs('admin.user_list');
 
         // 広告編集フォーム画面への遷移テスト(ログイン済み)
         $response = $this->withSession(['admin_auth' => true])->get('/admin/ads_edit/1');

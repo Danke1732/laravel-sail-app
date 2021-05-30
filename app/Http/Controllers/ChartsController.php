@@ -44,7 +44,7 @@ class ChartsController extends Controller
     }
 
     /**
-     * 計算結果登録もしくはPDFの出力
+     * 計算結果登録
      * @param App\Http\Requests\CalculateRequest $request
      */
     public function exeStore(CalculateRequest $request)

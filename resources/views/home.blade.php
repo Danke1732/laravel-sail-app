@@ -434,18 +434,18 @@
           <div class="images">
 
             <label for="image1" class="text-center d-inline-block p-2 p-md-3 ml-md-2 option-image-label">No <br>image</label>
-            <div class="image-view d-inline-block mr-1 hidden" id="image-view1"></div>
+            <div class="image-view d-inline-block ml-1 hidden" id="image-view1"></div>
             <input type="hidden" name="image_location1" value=1>
             <input type="file" name="image1" id="image1" class="option-image">
             
 
             <label for="image2" class="text-center d-inline-block p-2 p-md-3 ml-md-2 option-image-label">No <br>image</label>
-            <div class="image-view d-inline-block mr-1 hidden" id="image-view2"></div>
+            <div class="image-view d-inline-block ml-1 hidden" id="image-view2"></div>
             <input type="hidden" name="image_location2" value=2>
             <input type="file" name="image2" id="image2" class="option-image">
 
             <label for="image3" class="text-center d-inline-block p-2 p-md-3 ml-md-2 option-image-label">No <br>image</label>
-            <div class="image-view d-inline-block mr-1 hidden" id="image-view3"></div>
+            <div class="image-view d-inline-block ml-1 hidden" id="image-view3"></div>
             <input type="hidden" name="image_location3" value=3>
             <input type="file" name="image3" id="image3" class="option-image">
 

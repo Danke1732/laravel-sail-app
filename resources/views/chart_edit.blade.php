@@ -26,7 +26,7 @@
   <x-alert type="success" :session="session('success')"/>
 
   <section class="container-fluid mx-auto p-0 pb-3 pb-md-4 main-tool">
-    <form action="/calc_update/{{ $chart->id }}" method="POST" enctype="multipart/form-data" onsubmit="return false;">
+    <form method="POST" enctype="multipart/form-data">
     @csrf
       <div class="form-item p-3 p-md-4">
         <h1 class="heading_title mb-4">購入価格項目を入力してください。</h1>
@@ -511,17 +511,19 @@
 
       <div class="form-item user-support border-top py-4">
         <div class="d-flex justify-content-around align-content-center">
-          <a href="#" onclick="window.print(); return false;" class="btn btn-sm p-2 shadow-sm choice print d-inline-block">ページを印刷する</a>
+          <a href="#" onclick="window.print(); return false;" class="btn btn-sm p-2 shadow-sm choice print d-inline-block">ページの印刷</a>
+          <button type="submit" name="pdf" value="pdf" class="btn btn-sm p-2 choice save shadow-sm d-inline-block" formaction="/createPDF">PDFで出力</button>
           @if (Auth::check())
-            <input type="submit" value="データを保存する" class="btn btn-sm p-2 shadow-sm choice save d-inline-block" onclick="submit();">
+          <button type="submit" name="save" value="save" class="btn btn-sm p-2 choice save shadow-sm d-inline-block" formaction="/calc_update/{{ $chart->id }}">データの更新</button>
           @endif
         </div>
       </div>
       <div class="fixed-bottom user-support-fixed hidden">
         <div class="d-flex justify-content-around align-content-center">
-          <a href="#" onclick="window.print(); return false;" class="btn btn-sm p-2 choice print d-inline-block">ページを印刷する</a>
+          <a href="#" onclick="window.print(); return false;" class="btn btn-sm p-2 choice print d-inline-block">ページの印刷</a>
+          <button type="submit" name="pdf" value="pdf" class="btn btn-sm p-2 choice save d-inline-block" formaction="/createPDF">PDFで出力</button>
           @if (Auth::check())
-            <input type="submit" value="データを保存する" class="btn btn-sm p-2 choice save d-inline-block" onclick="submit();">
+          <button type="submit" name="save" value="save" class="btn btn-sm p-2 choice save d-inline-block" formaction="/calc_update/{{ $chart->id }}">データの更新</button>
           @endif
         </div>
       </div>

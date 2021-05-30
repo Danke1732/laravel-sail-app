@@ -458,14 +458,14 @@
             @if (isset($image1))
             <?php $image1_path = $image1->image_path; ?>
             <label for="image1" class="text-center d-inline-block p-2 p-md-3 ml-md-2 option-image-label hidden">No <br>image</label>
-            <div class="image-view d-inline-block mr-1 ml-md-2" id="image-view1">
+            <div class="image-view d-inline-block ml-1 ml-md-2" id="image-view1">
               <img src='{{ asset("/storage/$image1_path") }}' class="review-image" id="review-image1">
               <span class="fas fa-times-circle d-inline-block delete1"></span>
             </div>
             <input type="file" name="image1" id="image1" class="option-image">
             @else
             <label for="image1" class="text-center d-inline-block p-2 p-md-3 ml-md-2 option-image-label">No <br>image</label>
-            <div class="image-view d-inline-block mr-1 hidden ml-md-2" id="image-view1"></div>
+            <div class="image-view d-inline-block ml-1 hidden ml-md-2" id="image-view1"></div>
             <input type="file" name="image1" id="image1" class="option-image">
             @endif
             <input type="hidden" name="image_location1" value=1>
@@ -474,14 +474,14 @@
             @if (isset($image2))
             <?php $image2_path = $image2->image_path; ?>
             <label for="image2" class="text-center d-inline-block p-2 p-md-3 ml-md-2 option-image-label hidden">No <br>image</label>
-            <div class="image-view d-inline-block mr-1 ml-md-2" id="image-view2">
+            <div class="image-view d-inline-block ml-1 ml-md-2" id="image-view2">
               <img src='{{ asset("/storage/$image2_path") }}' class="review-image" id="review-image2">
               <span class="fas fa-times-circle d-inline-block delete2"></span>
             </div>
             <input type="file" name="image2" id="image2" class="option-image">
             @else
             <label for="image2" class="text-center d-inline-block p-2 p-md-3 ml-md-2 option-image-label">No <br>image</label>
-            <div class="image-view d-inline-block mr-1 ml-md-2 hidden" id="image-view2"></div>
+            <div class="image-view d-inline-block ml-1 ml-md-2 hidden" id="image-view2"></div>
             <input type="file" name="image2" id="image2" class="option-image">
             @endif
             <input type="hidden" name="image_location2" value=2>
@@ -490,14 +490,14 @@
             @if (isset($image3))
             <?php $image3_path = $image3->image_path; ?>
             <label for="image3" class="text-center d-inline-block p-2 p-md-3 ml-md-2 option-image-label hidden">No <br>image</label>
-            <div class="image-view d-inline-block mr-1 ml-md-2" id="image-view3">
+            <div class="image-view d-inline-block ml-1 ml-md-2" id="image-view3">
               <img src='{{ asset("/storage/$image3_path") }}' class="review-image" id="review-image3">
               <span class="fas fa-times-circle d-inline-block delete3"></span>
             </div>
             <input type="file" name="image3" id="image3" class="option-image">
             @else
             <label for="image3" class="text-center d-inline-block p-2 p-md-3 ml-md-2 option-image-label">No <br>image</label>
-            <div class="image-view d-inline-block mr-1 ml-md-2 hidden" id="image-view3"></div>
+            <div class="image-view d-inline-block ml-1 ml-md-2 hidden" id="image-view3"></div>
             <input type="file" name="image3" id="image3" class="option-image">
             @endif
             <input type="hidden" name="image_location3" value=3>

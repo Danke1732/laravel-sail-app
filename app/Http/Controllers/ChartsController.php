@@ -10,9 +10,13 @@ use App\Models\ChartImage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\CalculateRequest;
+use App\Library\Calculate;
+use PDF;
+use TCPDF;
 
 class ChartsController extends Controller
 {
+
     /**
      * 利回り計算ページ表示
      * @return View
@@ -40,13 +44,13 @@ class ChartsController extends Controller
     }
 
     /**
-     * 計算結果登録
+     * 計算結果登録もしくはPDFの出力
      * @param App\Http\Requests\CalculateRequest $request
      */
     public function exeStore(CalculateRequest $request)
     {
         $inputs = $request->all();
-        
+
         \DB::beginTransaction();
         try {
             // Chartオブジェクトの作成
@@ -123,7 +127,7 @@ class ChartsController extends Controller
                     $upload_image = $request->file('image2');
                     if ($upload_image) {
                         //アップロードされた画像を保存する
-			            $path = $upload_image->store('chart_images',"public");
+                        $path = $upload_image->store('chart_images',"public");
                         //画像の保存に成功したらDBに記録する
                         if($path){
                             $chart_image2->fill([
@@ -143,7 +147,7 @@ class ChartsController extends Controller
                     $upload_image = $request->file('image3');
                     if ($upload_image) {
                         //アップロードされた画像を保存する
-			            $path = $upload_image->store('chart_images',"public");
+                        $path = $upload_image->store('chart_images',"public");
                         //画像の保存に成功したらDBに記録する
                         if($path){
                             $chart_image3->fill([
@@ -166,6 +170,7 @@ class ChartsController extends Controller
                 'danger' => '登録に失敗しました。',
             ]);
         }
+        
     }
 
     /**
@@ -463,12 +468,63 @@ class ChartsController extends Controller
             return redirect()->route("user_detail", $auth_user->id)->with('success', '計算結果の更新が完了しました！');
         } catch (\Throwable $e) {
             \DB::rollback();
-            echo $e;
             // 登録失敗
             return back()->withErrors([
                 'danger' => '登録に失敗しました。',
             ]);
         }
+    }
+
+    private $pdf; // インスタンス変数を宣言
+
+    public function __construct(TCPDF $pdf)
+    {
+        // コンストラクタインジェクションでTCPDFクラスをインスタンス化
+        $this->pdf = $pdf;
+    }
+
+    /**
+     * PDF出力処理
+     * @param App\Http\Requests\CalculateRequest $request
+     * @return view
+     */
+    public function createPdf(CalculateRequest $request)
+    {
+        $inputs = $request->all();
+
+        $calc = new Calculate();
+
+        $data = $calc->pdf_calculate($inputs);
+
+        $data['property_price'] = $inputs['property_price'];
+        $data['purchase_fee'] = $inputs['purchase_fee'];
+        $data['borrowing_amount'] = $inputs['borrowing_amount'];
+        $data['annual_interest'] = $inputs['annual_interest'];
+        $data['borrowing_period'] = $inputs['borrowing_period'];
+        $data['monthly_rent_income'] = $inputs['monthly_rent_income'];
+        $data['expense'] = $inputs['expense'];
+        $data['vacancy'] = $inputs['vacancy'];
+        $data['tax'] = $inputs['tax'];
+        $data['ownership_period'] = $inputs['ownership_period'];
+        $data['sale_price'] = $inputs['sale_price'];
+        $data['sale_commission'] = $inputs['sale_commission'];
+        $data['property_name'] = $inputs['property_name'];
+        $data['age'] = $inputs['age'];
+        $data['note'] = $inputs['note'];
+
+        // $hs = '不動産投資利回りシミュレーション';
+        // $this->pdf->setHeaderData($hs);
+        // $this->pdf->setPrintHeader($hs);
+
+        // フォント、スタイル、サイズ をセット
+        $this->pdf->setFont('kozminproregular','',10);
+        // ページを追加
+        $this->pdf->addPage();
+        // HTMLを描画、viewの指定と変数代入
+        $this->pdf->writeHTML(view("pdf", $data)->render());
+        // 出力の指定です、ファイル名、拡張子、Dはダウンロードを意味します。
+        $this->pdf->output('Calculation' . '.pdf', 'I');
+        return;
     }
 
 }

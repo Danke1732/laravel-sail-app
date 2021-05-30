@@ -1,0 +1,26 @@
+<?php
+
+namespace Tests\Feature;
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
+use App\Models\User;
+
+class UserWithdrawTest extends TestCase
+{
+    use RefreshDatabase;
+
+    /**
+     * ユーザーの退会テスト
+     * @return void
+     */
+    public function testUserDelete()
+    {
+        // 商品の作成
+        $user = User::factory()->create();
+        
+        $response = $this->actingAs($user)->post("/user/withdraw/$user->id");
+        $response->assertStatus(302)->assertRedirect(route('calculate'));
+    }
+}

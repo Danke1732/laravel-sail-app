@@ -35,8 +35,8 @@ class ChartFactory extends Factory
             'ownership_period' => $this->faker->randomFloat(1, 0, 100),
             'sale_price' => $this->faker->randomFloat(1, 0, 100),
             'sale_commission' => $this->faker->randomFloat(1, 0, 100),
-            'user_id' => 5,
-            // 'user_id' => User::factory(),
+            // 'user_id' => 5,
+            'user_id' => User::factory(),
         ];
     }
 }

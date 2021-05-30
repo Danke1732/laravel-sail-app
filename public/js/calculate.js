@@ -157,7 +157,7 @@ window.addEventListener('DOMContentLoaded', function () {
       minusCheck(_totalSaleValue, totalSale);
       totalSale.innerHTML = parseFloat(_totalSaleValue).toFixed(1); // 税引き後CF累計の計算・表示
 
-      var _cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+      var _cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
 
       minusCheck(_cumulativeAfterTaxCFValue, cumulativeAfterTaxCF);
       cumulativeAfterTaxCF.innerHTML = parseFloat(_cumulativeAfterTaxCFValue).toFixed(1); // 税引き後CF累計(売却含む)の計算・表示
@@ -183,7 +183,7 @@ window.addEventListener('DOMContentLoaded', function () {
     minusCheck(totalSaleValue, totalSale);
     totalSale.innerHTML = parseFloat(totalSaleValue).toFixed(1); // 税引き後CF累計の計算・表示
 
-    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
     minusCheck(cumulativeAfterTaxCFValue, cumulativeAfterTaxCF);
     cumulativeAfterTaxCF.innerHTML = parseFloat(cumulativeAfterTaxCFValue).toFixed(1); // 税引き後CF累計(売却含む)の計算・表示
 
@@ -261,7 +261,7 @@ window.addEventListener('DOMContentLoaded', function () {
       minusCheck(_totalSaleValue2, totalSale);
       totalSale.innerHTML = parseFloat(_totalSaleValue2).toFixed(1); // 税引き後CF累計の計算・表示
 
-      var _cumulativeAfterTaxCFValue2 = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+      var _cumulativeAfterTaxCFValue2 = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
 
       minusCheck(_cumulativeAfterTaxCFValue2, cumulativeAfterTaxCF);
       cumulativeAfterTaxCF.innerHTML = parseFloat(_cumulativeAfterTaxCFValue2).toFixed(1); // 税引き後CF累計(売却含む)の計算・表示
@@ -287,7 +287,7 @@ window.addEventListener('DOMContentLoaded', function () {
     minusCheck(totalSaleValue, totalSale);
     totalSale.innerHTML = parseFloat(totalSaleValue).toFixed(1); // 税引き後CF累計の計算・表示
 
-    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
     minusCheck(cumulativeAfterTaxCFValue, cumulativeAfterTaxCF);
     cumulativeAfterTaxCF.innerHTML = parseFloat(cumulativeAfterTaxCFValue).toFixed(1); // 税引き後CF累計(売却含む)の計算・表示
 
@@ -338,7 +338,7 @@ window.addEventListener('DOMContentLoaded', function () {
     minusCheck(beforeTaxCFValue, beforeTaxCF);
     beforeTaxCF.innerHTML = parseFloat(beforeTaxCFValue).toFixed(1); // 税引き後CFの計算・表示
 
-    var afterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01));
+    var afterTaxCFValue = setRound(annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01));
     minusCheck(afterTaxCFValue, afterTaxCF);
     afterTaxCF.innerHTML = parseFloat(afterTaxCFValue).toFixed(1); // 譲渡所得税の計算・表示
     // 長期所有の場合
@@ -358,7 +358,7 @@ window.addEventListener('DOMContentLoaded', function () {
       minusCheck(_totalSaleValue3, totalSale);
       totalSale.innerHTML = parseFloat(_totalSaleValue3).toFixed(1); // 税引き後CF累計の計算・表示
 
-      var _cumulativeAfterTaxCFValue3 = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+      var _cumulativeAfterTaxCFValue3 = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
 
       minusCheck(_cumulativeAfterTaxCFValue3, cumulativeAfterTaxCF);
       cumulativeAfterTaxCF.innerHTML = parseFloat(_cumulativeAfterTaxCFValue3).toFixed(1); // 税引き後CF累計(売却含む)の計算・表示
@@ -384,7 +384,7 @@ window.addEventListener('DOMContentLoaded', function () {
     minusCheck(totalSaleValue, totalSale);
     totalSale.innerHTML = parseFloat(totalSaleValue).toFixed(1); // 税引き後CF累計の計算・表示
 
-    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
     minusCheck(cumulativeAfterTaxCFValue, cumulativeAfterTaxCF);
     cumulativeAfterTaxCF.innerHTML = parseFloat(cumulativeAfterTaxCFValue).toFixed(1); // 税引き後CF累計(売却含む)の計算・表示
 
@@ -431,7 +431,7 @@ window.addEventListener('DOMContentLoaded', function () {
     minusCheck(beforeTaxCFValue, beforeTaxCF);
     beforeTaxCF.innerHTML = parseFloat(beforeTaxCFValue).toFixed(1); // 税引き後CFの計算・表示
 
-    var afterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01));
+    var afterTaxCFValue = setRound(annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01));
     minusCheck(afterTaxCFValue, afterTaxCF);
     afterTaxCF.innerHTML = parseFloat(afterTaxCFValue).toFixed(1); // 譲渡所得税の計算・表示
     // 長期所有の場合
@@ -451,7 +451,7 @@ window.addEventListener('DOMContentLoaded', function () {
       minusCheck(_totalSaleValue4, totalSale);
       totalSale.innerHTML = parseFloat(_totalSaleValue4).toFixed(1); // 税引き後CF累計の計算・表示
 
-      var _cumulativeAfterTaxCFValue4 = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+      var _cumulativeAfterTaxCFValue4 = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
 
       minusCheck(_cumulativeAfterTaxCFValue4, cumulativeAfterTaxCF);
       cumulativeAfterTaxCF.innerHTML = parseFloat(_cumulativeAfterTaxCFValue4).toFixed(1); // 税引き後CF累計(売却含む)の計算・表示
@@ -477,7 +477,7 @@ window.addEventListener('DOMContentLoaded', function () {
     minusCheck(totalSaleValue, totalSale);
     totalSale.innerHTML = parseFloat(totalSaleValue).toFixed(1); // 税引き後CF累計の計算・表示
 
-    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
     minusCheck(cumulativeAfterTaxCFValue, cumulativeAfterTaxCF);
     cumulativeAfterTaxCF.innerHTML = parseFloat(cumulativeAfterTaxCFValue).toFixed(1); // 税引き後CF累計(売却含む)の計算・表示
 
@@ -524,7 +524,7 @@ window.addEventListener('DOMContentLoaded', function () {
     minusCheck(beforeTaxCFValue, beforeTaxCF);
     beforeTaxCF.innerHTML = parseFloat(beforeTaxCFValue).toFixed(1); // 税引き後CFの計算・表示
 
-    var afterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01));
+    var afterTaxCFValue = setRound(annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01));
     minusCheck(afterTaxCFValue, afterTaxCF);
     afterTaxCF.innerHTML = parseFloat(afterTaxCFValue).toFixed(1); // 譲渡所得税の計算・表示
     // 長期所有の場合
@@ -544,7 +544,7 @@ window.addEventListener('DOMContentLoaded', function () {
       minusCheck(_totalSaleValue5, totalSale);
       totalSale.innerHTML = parseFloat(_totalSaleValue5).toFixed(1); // 税引き後CF累計の計算・表示
 
-      var _cumulativeAfterTaxCFValue5 = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+      var _cumulativeAfterTaxCFValue5 = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
 
       minusCheck(_cumulativeAfterTaxCFValue5, cumulativeAfterTaxCF);
       cumulativeAfterTaxCF.innerHTML = parseFloat(_cumulativeAfterTaxCFValue5).toFixed(1); // 税引き後CF累計(売却含む)の計算・表示
@@ -570,7 +570,7 @@ window.addEventListener('DOMContentLoaded', function () {
     minusCheck(totalSaleValue, totalSale);
     totalSale.innerHTML = parseFloat(totalSaleValue).toFixed(1); // 税引き後CF累計の計算・表示
 
-    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
     minusCheck(cumulativeAfterTaxCFValue, cumulativeAfterTaxCF);
     cumulativeAfterTaxCF.innerHTML = parseFloat(cumulativeAfterTaxCFValue).toFixed(1); // 税引き後CF累計(売却含む)の計算・表示
 
@@ -637,7 +637,7 @@ window.addEventListener('DOMContentLoaded', function () {
     minusCheck(beforeTaxCFValue, beforeTaxCF);
     beforeTaxCF.innerHTML = parseFloat(beforeTaxCFValue).toFixed(1); // 税引き後CFの計算・表示
 
-    var afterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01));
+    var afterTaxCFValue = setRound(annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01));
     minusCheck(afterTaxCFValue, afterTaxCF);
     afterTaxCF.innerHTML = parseFloat(afterTaxCFValue).toFixed(1); // 譲渡所得税・売却総額の計算・表示
     // 長期所有の場合
@@ -662,7 +662,7 @@ window.addEventListener('DOMContentLoaded', function () {
       minusCheck(_totalSaleValue6, totalSale);
       totalSale.innerHTML = parseFloat(_totalSaleValue6).toFixed(1); // 税引き後CF累計の計算・表示
 
-      var _cumulativeAfterTaxCFValue6 = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+      var _cumulativeAfterTaxCFValue6 = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
 
       minusCheck(_cumulativeAfterTaxCFValue6, cumulativeAfterTaxCF);
       cumulativeAfterTaxCF.innerHTML = parseFloat(_cumulativeAfterTaxCFValue6).toFixed(1); // 税引き後CF累計(売却含む)の計算・表示
@@ -698,7 +698,7 @@ window.addEventListener('DOMContentLoaded', function () {
     minusCheck(totalSaleValue, totalSale);
     totalSale.innerHTML = parseFloat(totalSaleValue).toFixed(1); // 税引き後CF累計の計算・表示
 
-    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
 
     if (salePriceValue == "") {
       cumulativeAfterTaxCFValue = 0.0;
@@ -764,7 +764,7 @@ window.addEventListener('DOMContentLoaded', function () {
     minusCheck(beforeTaxCFValue, beforeTaxCF);
     beforeTaxCF.innerHTML = parseFloat(beforeTaxCFValue).toFixed(1); // 税引き後CFの計算・表示
 
-    var afterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01));
+    var afterTaxCFValue = setRound(annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01));
     minusCheck(afterTaxCFValue, afterTaxCF);
     afterTaxCF.innerHTML = parseFloat(afterTaxCFValue).toFixed(1); // 譲渡所得税・売却総額の計算・表示
     // 長期所有の場合
@@ -789,7 +789,7 @@ window.addEventListener('DOMContentLoaded', function () {
       minusCheck(_totalSaleValue7, totalSale);
       totalSale.innerHTML = parseFloat(_totalSaleValue7).toFixed(1); // 税引き後CF累計の計算・表示
 
-      var _cumulativeAfterTaxCFValue7 = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+      var _cumulativeAfterTaxCFValue7 = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
 
       minusCheck(_cumulativeAfterTaxCFValue7, cumulativeAfterTaxCF);
       cumulativeAfterTaxCF.innerHTML = parseFloat(_cumulativeAfterTaxCFValue7).toFixed(1); // 税引き後CF累計(売却含む)の計算・表示
@@ -825,7 +825,7 @@ window.addEventListener('DOMContentLoaded', function () {
     minusCheck(totalSaleValue, totalSale);
     totalSale.innerHTML = parseFloat(totalSaleValue).toFixed(1); // 税引き後CF累計の計算・表示
 
-    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
 
     if (salePriceValue == "") {
       cumulativeAfterTaxCFValue = 0.0;
@@ -891,7 +891,7 @@ window.addEventListener('DOMContentLoaded', function () {
     minusCheck(beforeTaxCFValue, beforeTaxCF);
     beforeTaxCF.innerHTML = parseFloat(beforeTaxCFValue).toFixed(1); // 税引き後CFの計算・表示
 
-    var afterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01));
+    var afterTaxCFValue = setRound(annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01));
     minusCheck(afterTaxCFValue, afterTaxCF);
     afterTaxCF.innerHTML = parseFloat(afterTaxCFValue).toFixed(1); // 譲渡所得税・売却総額の計算・表示
     // 長期所有の場合
@@ -916,7 +916,7 @@ window.addEventListener('DOMContentLoaded', function () {
       minusCheck(_totalSaleValue8, totalSale);
       totalSale.innerHTML = parseFloat(_totalSaleValue8).toFixed(1); // 税引き後CF累計の計算・表示
 
-      var _cumulativeAfterTaxCFValue8 = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+      var _cumulativeAfterTaxCFValue8 = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
 
       minusCheck(_cumulativeAfterTaxCFValue8, cumulativeAfterTaxCF);
       cumulativeAfterTaxCF.innerHTML = parseFloat(_cumulativeAfterTaxCFValue8).toFixed(1); // 税引き後CF累計(売却含む)の計算・表示
@@ -952,7 +952,7 @@ window.addEventListener('DOMContentLoaded', function () {
     minusCheck(totalSaleValue, totalSale);
     totalSale.innerHTML = parseFloat(totalSaleValue).toFixed(1); // 税引き後CF累計の計算・表示
 
-    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
 
     if (salePriceValue == "") {
       cumulativeAfterTaxCFValue = 0.0;
@@ -1001,7 +1001,7 @@ window.addEventListener('DOMContentLoaded', function () {
     var saleCommissionValue = setRound(saleCommission.value); // 売却手数料率の値を取得
     // 税引き後CFの計算・表示
 
-    var afterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01));
+    var afterTaxCFValue = setRound(annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01));
 
     if (taxValue == "") {
       afterTaxCFValue = 0.0;
@@ -1031,7 +1031,7 @@ window.addEventListener('DOMContentLoaded', function () {
       minusCheck(_totalSaleValue9, totalSale);
       totalSale.innerHTML = parseFloat(_totalSaleValue9).toFixed(1); // 税引き後CF累計の計算・表示
 
-      var _cumulativeAfterTaxCFValue9 = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+      var _cumulativeAfterTaxCFValue9 = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
 
       if (taxValue == "") {
         _cumulativeAfterTaxCFValue9 = 0.0;
@@ -1071,7 +1071,7 @@ window.addEventListener('DOMContentLoaded', function () {
     minusCheck(totalSaleValue, totalSale);
     totalSale.innerHTML = parseFloat(totalSaleValue).toFixed(1); // 税引き後CF累計の計算・表示
 
-    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
 
     if (salePriceValue == "") {
       cumulativeAfterTaxCFValue = 0.0;
@@ -1140,7 +1140,7 @@ window.addEventListener('DOMContentLoaded', function () {
       minusCheck(_totalSaleValue10, totalSale);
       totalSale.innerHTML = parseFloat(_totalSaleValue10).toFixed(1); // 税引き後CF累計の計算・表示
 
-      var _cumulativeAfterTaxCFValue10 = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+      var _cumulativeAfterTaxCFValue10 = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
 
       minusCheck(_cumulativeAfterTaxCFValue10, cumulativeAfterTaxCF);
       cumulativeAfterTaxCF.innerHTML = parseFloat(_cumulativeAfterTaxCFValue10).toFixed(1); // 税引き後CF累計(売却含む)の計算・表示
@@ -1176,7 +1176,7 @@ window.addEventListener('DOMContentLoaded', function () {
     minusCheck(totalSaleValue, totalSale);
     totalSale.innerHTML = parseFloat(totalSaleValue).toFixed(1); // 税引き後CF累計の計算・表示
 
-    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
 
     if (salePriceValue == "") {
       cumulativeAfterTaxCFValue = 0.0;
@@ -1245,7 +1245,7 @@ window.addEventListener('DOMContentLoaded', function () {
       minusCheck(_totalSaleValue11, totalSale);
       totalSale.innerHTML = parseFloat(_totalSaleValue11).toFixed(1); // 税引き後CF累計の計算・表示
 
-      var _cumulativeAfterTaxCFValue11 = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+      var _cumulativeAfterTaxCFValue11 = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
 
       minusCheck(_cumulativeAfterTaxCFValue11, cumulativeAfterTaxCF);
       cumulativeAfterTaxCF.innerHTML = parseFloat(_cumulativeAfterTaxCFValue11).toFixed(1); // 税引き後CF累計(売却含む)の計算・表示
@@ -1281,7 +1281,7 @@ window.addEventListener('DOMContentLoaded', function () {
     minusCheck(totalSaleValue, totalSale);
     totalSale.innerHTML = parseFloat(totalSaleValue).toFixed(1); // 税引き後CF累計の計算・表示
 
-    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
     minusCheck(cumulativeAfterTaxCFValue, cumulativeAfterTaxCF);
     cumulativeAfterTaxCF.innerHTML = parseFloat(cumulativeAfterTaxCFValue).toFixed(1); // 税引き後CF累計(売却含む)の計算・表示
 
@@ -1345,7 +1345,7 @@ window.addEventListener('DOMContentLoaded', function () {
       minusCheck(_totalSaleValue12, totalSale);
       totalSale.innerHTML = parseFloat(_totalSaleValue12).toFixed(1); // 税引き後CF累計の計算・表示
 
-      var _cumulativeAfterTaxCFValue12 = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+      var _cumulativeAfterTaxCFValue12 = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
 
       minusCheck(_cumulativeAfterTaxCFValue12, cumulativeAfterTaxCF);
       cumulativeAfterTaxCF.innerHTML = parseFloat(_cumulativeAfterTaxCFValue12).toFixed(1); // 税引き後CF累計(売却含む)の計算・表示
@@ -1381,7 +1381,7 @@ window.addEventListener('DOMContentLoaded', function () {
     minusCheck(totalSaleValue, totalSale);
     totalSale.innerHTML = parseFloat(totalSaleValue).toFixed(1); // 税引き後CF累計の計算・表示
 
-    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue)) * (1 - taxValue * 0.01) * ownershipPeriodValue);
+    var cumulativeAfterTaxCFValue = setRound((annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) - annualRepaymentAmountCalc(borrowingAmountValue, annualInterestValue, borrowingPeriodValue) - annualTakeHomeCalc(monthlyRentIncomeValue, expenseValue, vacancyValue) * (taxValue * 0.01)) * ownershipPeriodValue);
     minusCheck(cumulativeAfterTaxCFValue, cumulativeAfterTaxCF);
     cumulativeAfterTaxCF.innerHTML = parseFloat(cumulativeAfterTaxCFValue).toFixed(1); // 税引き後CF累計(売却含む)の計算・表示
 

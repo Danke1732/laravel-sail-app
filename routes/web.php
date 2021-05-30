@@ -25,6 +25,7 @@ use App\Http\Controllers\UsersController;
 
 // 利回り計算ページ表示
 Route::get('/', [ChartsController::class, 'showCalculate'])->name('calculate');
+Route::post('/createPDF', [ChartsController::class, 'createPdf'])->name('createPdf');
 
 // 一般ユーザーログイン済みのミドルウェア
 Route::middleware(['auth'])->group(function () {

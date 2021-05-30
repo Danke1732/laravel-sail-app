@@ -5,7 +5,6 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ChartsController;
 use App\Http\Controllers\UsersController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,12 +16,7 @@ use App\Http\Controllers\UsersController;
 |
 */
 
-// -- 一般ユーザーミドルウェア --
-// 一般ユーザーログイン未のミドルウェア
-// Route::middleware(['guest'])->group(function () {
-
-// });
-
+// -- 一般ユーザー ---
 // 利回り計算ページ表示
 Route::get('/', [ChartsController::class, 'showCalculate'])->name('calculate');
 Route::post('/createPDF', [ChartsController::class, 'createPdf'])->name('createPdf');
@@ -34,7 +28,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/user/{id}', [UsersController::class, 'userDetail'])->name('user_detail');
     Route::post('/user/withdraw/{id}', [UsersController::class, 'userWithdraw'])->name('user_withdraw');
     Route::get('/chart/{id}', [ChartsController::class, 'chartEdit'])->name('chart_edit');
-
 });
 
 //  -- 管理者ユーザーミドルウェア --
@@ -73,9 +66,5 @@ Route::group(['middleware' => ['auth.admin']], function () {
     // 管理者ユーザーログアウト処理
     Route::post('admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 });
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

@@ -10,5 +10,6 @@
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 <!-- Scripts -->
+<script src="https://www.google.com/recaptcha/api.js"></script>
 <script src="https://kit.fontawesome.com/5f12186527.js" crossorigin="anonymous"></script>
 <script src="{{ asset('js/app.js') }}" defer></script>

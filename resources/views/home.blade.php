@@ -39,7 +39,7 @@
               </div>
             </div>
           </label>
-          <input type="number" name="property_price" id="property_price" class="rounded border-0 input-item py-2 pl-2 pr-3" placeholder="入力してください" pattern="^([1-9]\d*|0)(\.\d+)?$" required><span class="ml-1 d-inline-block">万円</span>
+          <input type="number" name="property_price" id="property_price" class="rounded border-0 input-item py-2 pl-2 pr-3" placeholder="入力してください" step="0.1" pattern="^([1-9]\d*|0)(\.\d+)?$" required><span class="ml-1 d-inline-block">万円</span>
         </div>
 
         <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
@@ -66,7 +66,7 @@
             </div>
           </div>
           </label>
-          <input type="number" name="purchase_fee" id="purchase_fee" class="rounded border-0 input-item py-2 px-3" value=10.0><span class="ml-1 d-inline-block">%</span>
+          <input type="number" name="purchase_fee" id="purchase_fee" class="rounded border-0 input-item py-2 px-3" value="10.0" step="0.1"><span class="ml-1 d-inline-block">%</span>
         </div>
         <div class="d-flex justify-content-between">
           <label>購入総額 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -93,7 +93,7 @@
               </div>
             </div>
           </label>
-          <input type="number" name="borrowing_amount" id="borrowing_amount" class="rounded border-0 input-item py-2 px-3" value=0.0><span class="ml-1 d-inline-block">万円</span>
+          <input type="number" name="borrowing_amount" id="borrowing_amount" class="rounded border-0 input-item py-2 px-3" value=0.0 step="0.1"><span class="ml-1 d-inline-block">万円</span>
         </div>
         <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
           <label>自己資金 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -119,7 +119,7 @@
               </div>
             </div>
           </label>
-          <input type="number" name="annual_interest" id="annual_interest" class="rounded border-0 input-item py-2 px-3" value=0.0><span class="ml-1 d-inline-block">%</span>
+          <input type="number" name="annual_interest" id="annual_interest" class="rounded border-0 input-item py-2 px-3" value=0.0 step="0.1"><span class="ml-1 d-inline-block">%</span>
         </div>
         <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
           <label>借入期間 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -132,7 +132,7 @@
               </div>
             </div>
           </label>
-          <input type="number" name="borrowing_period" id="borrowing_period" class="rounded border-0 input-item py-2 px-3" value=35.0><span class="ml-1 d-inline-block">年</span>
+          <input type="number" name="borrowing_period" id="borrowing_period" class="rounded border-0 input-item py-2 px-3" value=35.0 step="0.1"><span class="ml-1 d-inline-block">年</span>
         </div>
         <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-55 border-bottom">
           <label>年間元利返済額 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -177,7 +177,7 @@
               </div>
             </div>
           </label>
-          <input type="number" name="monthly_rent_income" id="monthly_rent_income" class="rounded border-0 input-item py-2 px-3" value=100.0><span class="ml-1 d-inline-block">万円</span>
+          <input type="number" name="monthly_rent_income" id="monthly_rent_income" class="rounded border-0 input-item py-2 px-3" value=100.0 step="0.1"><span class="ml-1 d-inline-block">万円</span>
         </div>
         <div class="d-flex justify-content-between mb-3 pb-3 pb-md-5 border-bottom">
           <label>年間家賃収入 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -206,7 +206,7 @@
               </div>
             </div>
           </label>
-          <input type="number" name="expense" id="expense" class="rounded border-0 input-item py-2 px-3" value=30.0><span class="ml-1 d-inline-block">%</span>
+          <input type="number" name="expense" id="expense" class="rounded border-0 input-item py-2 px-3" value=30.0 step="0.1"><span class="ml-1 d-inline-block">%</span>
         </div>
         <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
           <label>空室率 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -219,7 +219,7 @@
               </div>
             </div>
           </label>
-          <input type="number" name="vacancy" id="vacancy" class="rounded border-0 input-item py-2 px-3" value=10.0><span class="ml-1 d-inline-block">%</span>
+          <input type="number" name="vacancy" id="vacancy" class="rounded border-0 input-item py-2 px-3" value=10.0 step="0.1"><span class="ml-1 d-inline-block">%</span>
         </div>
         <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
           <label>年間手取り <span class="material-icons-outlined question-icon">help_outline</span>
@@ -291,7 +291,7 @@
               </div>
             </div>
           </label>
-          <input type="number" name="tax" id="tax" class="rounded border-0 input-item py-2 px-3" value=30.0><span class="ml-1 d-inline-block">%</span>
+          <input type="number" name="tax" id="tax" class="rounded border-0 input-item py-2 px-3" value=30.0 step="0.1"><span class="ml-1 d-inline-block">%</span>
         </div>
         <div class="d-flex justify-content-between">
           <label>税引き後CF <span class="material-icons-outlined question-icon">help_outline</span>
@@ -320,7 +320,7 @@
               </div>
             </div>
           </label>
-          <input type="number" name="ownership_period" id="ownership_period" class="rounded border-0 input-item py-2 px-3" value=35.0><span class="ml-1 d-inline-block">年</span>
+          <input type="number" name="ownership_period" id="ownership_period" class="rounded border-0 input-item py-2 px-3" value=35.0 step="0.1"><span class="ml-1 d-inline-block">年</span>
         </div>
         <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
           <label>売却価格 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -333,7 +333,7 @@
               </div>
             </div>
           </label>
-          <input type="number" name="sale_price" id="sale_price" class="rounded border-0 input-item py-2 px-3" value=2.0><span class="ml-1 d-inline-block">万円</span>
+          <input type="number" name="sale_price" id="sale_price" class="rounded border-0 input-item py-2 px-3" value=2.0 step="0.1"><span class="ml-1 d-inline-block">万円</span>
         </div>
         <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
           <label>売却手数料率 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -353,7 +353,7 @@
               </div>
             </div>
           </label>
-          <input type="number" name="sale_commission" id="sale_commission" class="rounded border-0 input-item py-2 px-3" value=3.0><span class="ml-1 d-inline-block">%</span>
+          <input type="number" name="sale_commission" id="sale_commission" class="rounded border-0 input-item py-2 px-3" value=3.0 step="0.1"><span class="ml-1 d-inline-block">%</span>
         </div>
         <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
           <label>譲渡所得税 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -423,7 +423,7 @@
         </div>
         <div class="d-flex justify-content-between mb-3 pb-3 pb-md-5 border-bottom">
           <label for="age">築年数</label>
-          <input type="number" name="age" id="age" class="rounded border-0 input-item py-2 px-3"><span class="ml-1 d-inline-block">年</span>
+          <input type="number" name="age" id="age" step="0.1" class="rounded border-0 input-item py-2 px-3"><span class="ml-1 d-inline-block">年</span>
         </div>
         <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
           <label for="note">メモ</label>
@@ -458,7 +458,9 @@
       <div class="form-item user-support border-top py-4">
         <div class="d-flex justify-content-around align-content-center">
           <a href="#" onclick="window.print(); return false;" class="btn btn-sm p-2 shadow-sm choice print d-inline-block">ページの印刷</a>
-          <button type="submit" name="pdf" value="pdf" class="btn btn-sm p-2 choice save shadow-sm d-inline-block" formaction="/createPDF">PDFで出力</button>
+          @if (!$isMobile)
+            <button type="submit" name="pdf" value="pdf" class="btn btn-sm p-2 choice save shadow-sm d-inline-block" formaction="/createPDF">PDFで出力</button>
+          @endif
           @if (Auth::check())
           <button type="submit" name="save" value="save" class="btn btn-sm p-2 choice save shadow-sm d-inline-block" formaction="/calc_store">データを保存</button>
           @endif
@@ -467,7 +469,9 @@
       <div class="fixed-bottom user-support-fixed hidden">
         <div class="d-flex justify-content-around align-content-center">
           <a href="#" onclick="window.print(); return false;" class="btn btn-sm p-2 choice print d-inline-block">ページの印刷</a>
-          <button type="submit" name="pdf" value="pdf" class="btn btn-sm p-2 choice save d-inline-block" formaction="/createPDF">PDFで出力</button>
+          @if (!$isMobile)
+            <button type="submit" name="pdf" value="pdf" class="btn btn-sm p-2 choice save d-inline-block" formaction="/createPDF">PDFで出力</button>
+          @endif
           @if (Auth::check())
           <button type="submit" name="save" value="save" class="btn btn-sm p-2 choice save d-inline-block" formaction="/calc_store">データを保存</button>
           @endif

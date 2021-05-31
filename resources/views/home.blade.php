@@ -457,26 +457,26 @@
 
       <div class="form-item user-support border-top py-4">
         <div class="d-flex justify-content-around align-content-center">
-          <a href="#" onclick="window.print(); return false;" class="btn btn-sm p-2 shadow-sm choice print d-inline-block">ページの印刷</a>
           @if (!$isMobile)
-            <button type="submit" name="pdf" value="pdf" class="btn btn-sm p-2 choice save shadow-sm d-inline-block" formaction="/createPDF">PDFで出力</button>
+          <button type="submit" name="pdf" value="pdf" class="btn btn-sm p-2 choice save shadow-sm d-inline-block" formaction="/createPDF">PDFで出力</button>
           @endif
           @if (Auth::check())
           <button type="submit" name="save" value="save" class="btn btn-sm p-2 choice save shadow-sm d-inline-block" formaction="/calc_store">データを保存</button>
           @endif
         </div>
       </div>
+      @if (!$isMobile || Auth::check())
       <div class="fixed-bottom user-support-fixed hidden">
         <div class="d-flex justify-content-around align-content-center">
-          <a href="#" onclick="window.print(); return false;" class="btn btn-sm p-2 choice print d-inline-block">ページの印刷</a>
           @if (!$isMobile)
-            <button type="submit" name="pdf" value="pdf" class="btn btn-sm p-2 choice save d-inline-block" formaction="/createPDF">PDFで出力</button>
+          <button type="submit" name="pdf" value="pdf" class="btn btn-sm p-2 choice save d-inline-block" formaction="/createPDF">PDFで出力</button>
           @endif
           @if (Auth::check())
           <button type="submit" name="save" value="save" class="btn btn-sm p-2 choice save d-inline-block" formaction="/calc_store">データを保存</button>
           @endif
         </div>
       </div>
+      @endif
     </form>
   </section>
 

@@ -35,7 +35,19 @@ class RegisteredUserController extends Controller
         $request->validate([
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|confirmed|min:8',
+            'g-recaptcha-response' => ['required', new \Arcanedev\NoCaptcha\Rules\CaptchaRule]
+        ], [
+            'g-recaptcha-response.required' => 'キャプチャがチェックされていません。',
+            'g-recaptcha-response.captcha'  => '',
         ]);
+
+        // $request->validate([
+        //     // 中略
+        //     'g-recaptcha-response' => ['required', new \Arcanedev\NoCaptcha\Rules\CaptchaRule]
+        // ], [
+        //     'g-recaptcha-response.required' => 'v2のチェックボックスなら、チェックがされていないときのメッセージ',
+        //     'g-recaptcha-response.captcha'  => 'ロボットだと判断されてしまった時のメッセージ',
+        // ]);
 
         $user = User::create([
             'email' => $request->email,

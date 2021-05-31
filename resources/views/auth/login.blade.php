@@ -43,6 +43,8 @@
                 </label>
             </div>
 
+            {!! no_captcha()->input() !!}
+
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
@@ -55,6 +57,15 @@
                 </x-button>
             </div>
         </form>
+        {!! no_captcha()->script() !!} 
+        {!! no_captcha()->getApiScript() !!}
+        <script>
+            grecaptcha.ready(function() {
+                window.noCaptcha.render('login', function (token) {
+                    document.querySelector('#g-recaptcha-response').value = token;
+                });
+            });
+        </script>
     </x-auth-card>
 </x-guest-layout>
 @endsection

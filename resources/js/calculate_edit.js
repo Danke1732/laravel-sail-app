@@ -1,3 +1,4 @@
+if (document.URL.match( /chart[/]\d+/ )) {
 // 各数字入力input要素取得
 const propertyPrice = document.getElementById('property_price');
 const purchaseFee = document.getElementById('purchase_fee');
@@ -326,3 +327,4 @@ function inputImage3() {
 }
 setInterval(inputImage3, 1000);
 // window.addEventListener('DOMContentLoaded', inputImage);
+}

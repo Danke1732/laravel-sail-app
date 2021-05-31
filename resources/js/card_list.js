@@ -1,3 +1,4 @@
+if (document.URL.match( /user[/]\d+/ )) {
 window.addEventListener('DOMContentLoaded', () => {
 
   let minusChecks = document.querySelectorAll('.minus-check');
@@ -61,3 +62,4 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+}

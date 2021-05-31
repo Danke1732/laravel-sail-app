@@ -6,7 +6,6 @@ use Illuminate\View\Component;
 
 class Alert extends Component
 {
-
     /**
      * 警告タイプ
      *

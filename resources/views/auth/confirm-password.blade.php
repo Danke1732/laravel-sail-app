@@ -1,3 +1,6 @@
+@extends('layouts.layout')
+@section('site_title', 'パスワード認証')
+@section('content')
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
@@ -34,3 +37,4 @@
         </form>
     </x-auth-card>
 </x-guest-layout>
+@endsection

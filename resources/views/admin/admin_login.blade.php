@@ -29,7 +29,7 @@
       </ul>
     </div>
   @endif
-  <x-alert type="danger" :session="session('danger')"/> 
+  <x-alert type="danger" :session="session('danger')"/>
   <h1>Admin Sign In</h1>
   <form action="{{ route('admin.login') }}" method="POST" autocomplete="off">
     @csrf

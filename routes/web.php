@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ChartsController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,19 +16,19 @@ use App\Http\Controllers\ChartsController;
 |
 */
 
-// -- 一般ユーザーミドルウェア --
-// 一般ユーザーログイン未のミドルウェア
-// Route::middleware(['guest'])->group(function () {
-
-// });
-
+// -- 一般ユーザー ---
 // 利回り計算ページ表示
 Route::get('/', [ChartsController::class, 'showCalculate'])->name('calculate');
+Route::post('/createPDF', [ChartsController::class, 'createPdf'])->name('createPdf');
 
 // 一般ユーザーログイン済みのミドルウェア
-// Route::middleware(['auth'])->group(function () {
-
-// });
+Route::middleware(['auth'])->group(function () {
+    Route::post('/calc_store', [ChartsController::class, 'exeStore'])->name('exeStore');
+    Route::post('/calc_update/{id}', [ChartsController::class, 'exeUpdate'])->name('exeUpdate');
+    Route::get('/user/{id}', [UsersController::class, 'userDetail'])->name('user_detail');
+    Route::post('/user/withdraw/{id}', [UsersController::class, 'userWithdraw'])->name('user_withdraw');
+    Route::get('/chart/{id}', [ChartsController::class, 'chartEdit'])->name('chart_edit');
+});
 
 //  -- 管理者ユーザーミドルウェア --
 // 管理者ユーザーログイン時のミドルウェア
@@ -48,6 +49,8 @@ Route::group(['middleware' => ['auth.admin']], function () {
     })->name('admin.ads_new');
     // 管理者広告一覧表示
     Route::get('admin/ads_list', [AdminController::class, 'ads_list'])->name('admin.ads_list');
+    // 管理者ユーザー一覧表示
+    Route::get('admin/user_list', [AdminController::class, 'user_list'])->name('admin.user_list');
     // 管理者広告編集ページ表示
     Route::get('admin/ads_edit/{id}', [AdminController::class, 'ads_edit'])->name('admin.ads_edit');
 
@@ -64,8 +67,4 @@ Route::group(['middleware' => ['auth.admin']], function () {
     Route::post('admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-// require __DIR__.'/auth.php';
+require __DIR__.'/auth.php';

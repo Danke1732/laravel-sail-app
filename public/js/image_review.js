@@ -1,0 +1,303 @@
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!**************************************!*\
+  !*** ./resources/js/image_review.js ***!
+  \**************************************/
+// 画像のinput処理
+window.addEventListener('DOMContentLoaded', function () {
+  var image1 = document.getElementById('image1');
+  var image2 = document.getElementById('image2');
+  var image3 = document.getElementById('image3');
+  var labelImage1 = document.querySelector('label[for="image1"]');
+  var labelImage2 = document.querySelector('label[for="image2"]');
+  var labelImage3 = document.querySelector('label[for="image3"]');
+  var imageView1 = document.getElementById('image-view1');
+  var imageView2 = document.getElementById('image-view2');
+  var imageView3 = document.getElementById('image-view3'); // 画像１を入力した場合
+
+  image1.addEventListener('change', function (e) {
+    labelImage1.classList.add('hidden');
+    imageView1.classList.remove('hidden');
+
+    function createImageHTML() {
+      var image = document.createElement('img');
+      var span = document.createElement('span');
+      image.setAttribute('src', blob);
+      image.setAttribute('class', 'review-image');
+      image.setAttribute('id', 'image-review1');
+      span.setAttribute('class', 'fas fa-times-circle d-inline-block delete1');
+      imageView1.appendChild(image);
+      imageView1.appendChild(span);
+    }
+
+    var file = e.target.files[0];
+    var blob = window.URL.createObjectURL(file);
+    createImageHTML(blob);
+  }); // 画像２を入力した場合
+
+  image2.addEventListener('change', function (e) {
+    labelImage2.classList.add('hidden');
+    imageView2.classList.remove('hidden');
+
+    function createImageHTML() {
+      var image = document.createElement('img');
+      var span = document.createElement('span');
+      image.setAttribute('src', blob);
+      image.setAttribute('class', 'review-image');
+      image.setAttribute('id', 'image-review2');
+      span.setAttribute('class', 'fas fa-times-circle d-inline-block delete2');
+      imageView2.appendChild(image);
+      imageView2.appendChild(span);
+    }
+
+    var file = e.target.files[0];
+    var blob = window.URL.createObjectURL(file);
+    createImageHTML(blob);
+  }); // 画像３を入力した場合
+
+  image3.addEventListener('change', function (e) {
+    labelImage3.classList.add('hidden');
+    imageView3.classList.remove('hidden');
+
+    function createImageHTML() {
+      var image = document.createElement('img');
+      var span = document.createElement('span');
+      image.setAttribute('src', blob);
+      image.setAttribute('class', 'review-image');
+      image.setAttribute('id', 'image-review3');
+      span.setAttribute('class', 'fas fa-times-circle d-inline-block delete3');
+      imageView3.appendChild(image);
+      imageView3.appendChild(span);
+    }
+
+    var file = e.target.files[0];
+    var blob = window.URL.createObjectURL(file);
+    createImageHTML(blob);
+  });
+}); // 入力した画像１を取り消すボタン(x)をクリックした時の処理
+
+function imageDelete1() {
+  var image1 = document.getElementById('image1');
+  var labelImage1 = document.querySelector('label[for="image1"]');
+  var imageView1 = document.getElementById('image-view1');
+  var delete1 = document.querySelector('.delete1');
+
+  try {
+    delete1.addEventListener('click', function (e) {
+      e.stopPropagation();
+      image1.value = "";
+
+      while (imageView1.firstChild) {
+        imageView1.removeChild(imageView1.firstChild);
+      }
+
+      imageView1.classList.add('hidden');
+      labelImage1.classList.remove('hidden');
+    });
+  } catch (e) {
+    console.log();
+  }
+}
+
+setInterval(imageDelete1, 1000); // window.addEventListener('change', imageDelete1);
+// 入力した画像２を取り消すボタン(x)をクリックした時の処理
+
+function imageDelete2() {
+  var image2 = document.getElementById('image2');
+  var labelImage2 = document.querySelector('label[for="image2"]');
+  var imageView2 = document.getElementById('image-view2');
+  var delete2 = document.querySelector('.delete2');
+
+  try {
+    delete2.addEventListener('click', function (e) {
+      e.stopPropagation();
+      image2.value = "";
+
+      while (imageView2.firstChild) {
+        imageView2.removeChild(imageView2.firstChild);
+      }
+
+      imageView2.classList.add('hidden');
+      labelImage2.classList.remove('hidden');
+    });
+  } catch (e) {
+    console.log();
+  }
+}
+
+setInterval(imageDelete2, 1000); // window.addEventListener('change', imageDelete1);
+// 入力した画像３を取り消すボタン(x)をクリックした時の処理
+
+function imageDelete3() {
+  var image3 = document.getElementById('image3');
+  var labelImage3 = document.querySelector('label[for="image3"]');
+  var imageView3 = document.getElementById('image-view3');
+  var delete3 = document.querySelector('.delete3');
+
+  try {
+    delete3.addEventListener('click', function (e) {
+      e.stopPropagation();
+      image3.value = "";
+
+      while (imageView3.firstChild) {
+        imageView3.removeChild(imageView3.firstChild);
+      }
+
+      imageView3.classList.add('hidden');
+      labelImage3.classList.remove('hidden');
+    });
+  } catch (e) {
+    console.log();
+  }
+}
+
+setInterval(imageDelete3, 1000); // window.addEventListener('change', imageDelete1);
+
+function imageDetail1() {
+  var imageView1 = document.getElementById('image-view1');
+  var mask = document.getElementById('mask');
+  var imageDetail = document.getElementById('image-detail');
+
+  try {
+    imageView1.addEventListener('click', function (e) {
+      if (imageView1.getAttribute('data-load') != null) {
+        return null;
+      }
+
+      imageView1.setAttribute('data-load', 'true');
+
+      function createImageHTML() {
+        var image = document.createElement('img');
+        image.setAttribute('src', file);
+        imageDetail.appendChild(image);
+      }
+
+      var file = e.target.getAttribute('src');
+      createImageHTML(file);
+      mask.classList.add('visible');
+      imageDetail.classList.remove('hidden');
+    });
+    mask.addEventListener('click', function () {
+      if (imageDetail.firstChild) {
+        imageDetail.removeChild(imageDetail.firstChild);
+      }
+
+      mask.classList.remove('visible');
+      imageDetail.classList.add('hidden');
+      imageView1.removeAttribute('data-load');
+    });
+    imageDetail.addEventListener('click', function () {
+      if (imageDetail.firstChild) {
+        imageDetail.removeChild(imageDetail.firstChild);
+      }
+
+      mask.classList.remove('visible');
+      imageDetail.classList.add('hidden');
+      imageView1.removeAttribute('data-load');
+    });
+  } catch (e) {
+    console.log();
+  }
+}
+
+setInterval(imageDetail1, 1000);
+
+function imageDetail2() {
+  var imageView2 = document.getElementById('image-view2');
+  var mask = document.getElementById('mask');
+  var imageDetail = document.getElementById('image-detail');
+
+  try {
+    imageView2.addEventListener('click', function (e) {
+      if (imageView2.getAttribute('data-load') != null) {
+        return null;
+      }
+
+      imageView2.setAttribute('data-load', 'true');
+
+      function createImageHTML() {
+        var image = document.createElement('img');
+        image.setAttribute('src', file);
+        imageDetail.appendChild(image);
+      }
+
+      var file = e.target.getAttribute('src');
+      createImageHTML(file);
+      mask.classList.add('visible');
+      imageDetail.classList.remove('hidden');
+    });
+    mask.addEventListener('click', function () {
+      if (imageDetail.firstChild) {
+        imageDetail.removeChild(imageDetail.firstChild);
+      }
+
+      mask.classList.remove('visible');
+      imageDetail.classList.add('hidden');
+      imageView2.removeAttribute('data-load');
+    });
+    imageDetail.addEventListener('click', function () {
+      if (imageDetail.firstChild) {
+        imageDetail.removeChild(imageDetail.firstChild);
+      }
+
+      mask.classList.remove('visible');
+      imageDetail.classList.add('hidden');
+      imageView2.removeAttribute('data-load');
+    });
+  } catch (e) {
+    console.log();
+  }
+}
+
+setInterval(imageDetail2, 1000);
+
+function imageDetail3() {
+  var imageView3 = document.getElementById('image-view3');
+  var mask = document.getElementById('mask');
+  var imageDetail = document.getElementById('image-detail');
+
+  try {
+    imageView3.addEventListener('click', function (e) {
+      if (imageView3.getAttribute('data-load') != null) {
+        return null;
+      }
+
+      imageView3.setAttribute('data-load', 'true');
+
+      function createImageHTML() {
+        var image = document.createElement('img');
+        image.setAttribute('src', file);
+        imageDetail.appendChild(image);
+      }
+
+      var file = e.target.getAttribute('src');
+      createImageHTML(file);
+      mask.classList.add('visible');
+      imageDetail.classList.remove('hidden');
+    });
+    mask.addEventListener('click', function () {
+      if (imageDetail.firstChild) {
+        imageDetail.removeChild(imageDetail.firstChild);
+      }
+
+      mask.classList.remove('visible');
+      imageDetail.classList.add('hidden');
+      imageView3.removeAttribute('data-load');
+    });
+    imageDetail.addEventListener('click', function () {
+      if (imageDetail.firstChild) {
+        imageDetail.removeChild(imageDetail.firstChild);
+      }
+
+      mask.classList.remove('visible');
+      imageDetail.classList.add('hidden');
+      imageView3.removeAttribute('data-load');
+    });
+  } catch (e) {
+    console.log();
+  }
+}
+
+setInterval(imageDetail3, 1000);
+/******/ })()
+;

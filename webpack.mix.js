@@ -24,3 +24,6 @@ mix.js('resources/js/main.js', 'public/js/main.js');
 mix.js('resources/js/admin.js', 'public/js/admin.js');
 mix.js('resources/js/input_limit.js', 'public/js/input_limit.js');
 mix.js('resources/js/calculate.js', 'public/js/calculate.js');
+mix.js('resources/js/image_review.js', 'public/js/image_review.js');
+mix.js('resources/js/card_list.js', 'public/js/card_list.js');
+mix.js('resources/js/calculate_edit.js', 'public/js/calculate_edit.js');

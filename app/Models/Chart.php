@@ -16,6 +16,14 @@ class Chart extends Model
     {
         return $this->hasOne(Option::class);
     }
+    
+    /**
+     * 計算表に結びつく複数の画像を取得
+     */
+    public function chart_images()
+    {
+        return $this->hasMany(ChartImage::class);
+    }
 
     protected $table = "charts";
     protected $fillable = [
@@ -35,5 +43,7 @@ class Chart extends Model
         'ownership_period',
         'sale_price',
         'sale_commission',
+        // リレーション
+        'user_id',
     ];
 }

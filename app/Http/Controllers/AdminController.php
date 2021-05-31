@@ -7,6 +7,7 @@ use App\Http\Requests\AdsTopCreateRequest;
 use App\Http\Requests\AdsBottomCreateRequest;
 use App\Http\Requests\AdsUpdateRequest;
 use App\Models\Ad;
+use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
@@ -54,6 +55,16 @@ class AdminController extends Controller
         $ads_top_lists = Ad::where('location', 0)->get();
         $ads_bottom_lists = Ad::where('location', 1)->get();
         return view("admin.ads_list", ["ads_top_lists" => $ads_top_lists, "ads_bottom_lists" => $ads_bottom_lists]);
+    }
+
+    /**
+     * ユーザー一覧表示
+     * @return View
+     */
+    public function user_list()
+    {
+        $users = User::with('charts')->get();
+        return view("admin.user_list", ["users" => $users]);
     }
 
     /**

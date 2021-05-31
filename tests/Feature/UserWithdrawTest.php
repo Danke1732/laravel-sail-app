@@ -32,8 +32,15 @@ class UserWithdrawTest extends TestCase
     {
         // 商品の作成
         $user = User::factory()->create();
+        // ユーザー2作成
+        $user2 = User::factory()->create();
         
+        // ログイン未の失敗
         $response = $this->post("/user/withdraw/$user->id");
         $response->assertStatus(302)->assertRedirect(route('login'));
+
+        // 他ユーザーからのアクセス
+        $response = $this->actingAs($user2)->post("/user/withdraw/$user->id");
+        $response->assertStatus(302)->assertRedirect(route('calculate'));
     }
 }

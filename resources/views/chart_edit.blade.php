@@ -39,7 +39,7 @@
               </div>
             </div>
           </label>
-          <input type="number" name="property_price" id="property_price" class="rounded border-0 input-item py-2 pl-2 pr-3" placeholder="入力してください" value="{{ $chart->property_price }}" pattern="^([1-9]\d*|0)(\.\d+)?$" required><span class="ml-1 d-inline-block">万円</span>
+          <input type="number" name="property_price" id="property_price" class="rounded border-0 input-item py-2 pl-2 pr-3" placeholder="入力してください" value="{{ $chart->property_price }}" step="0.1" required><span class="ml-1 d-inline-block">万円</span>
         </div>
 
         <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
@@ -66,7 +66,7 @@
             </div>
           </div>
           </label>
-          <input type="number" name="purchase_fee" id="purchase_fee" class="rounded border-0 input-item py-2 px-3" value="{{ $chart->purchase_fee }}"><span class="ml-1 d-inline-block">%</span>
+          <input type="number" name="purchase_fee" id="purchase_fee" class="rounded border-0 input-item py-2 px-3" value="{{ $chart->purchase_fee }}" step="0.1"><span class="ml-1 d-inline-block">%</span>
         </div>
         <div class="d-flex justify-content-between">
           <label>購入総額 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -93,7 +93,7 @@
               </div>
             </div>
           </label>
-          <input type="number" name="borrowing_amount" id="borrowing_amount" class="rounded border-0 input-item py-2 px-3" value="{{ $chart->borrowing_amount }}"><span class="ml-1 d-inline-block">万円</span>
+          <input type="number" name="borrowing_amount" id="borrowing_amount" class="rounded border-0 input-item py-2 px-3" value="{{ $chart->borrowing_amount }}" step="0.1"><span class="ml-1 d-inline-block">万円</span>
         </div>
         <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
           <label>自己資金 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -119,7 +119,7 @@
               </div>
             </div>
           </label>
-          <input type="number" name="annual_interest" id="annual_interest" class="rounded border-0 input-item py-2 px-3" value="{{ $chart->annual_interest }}"><span class="ml-1 d-inline-block">%</span>
+          <input type="number" name="annual_interest" id="annual_interest" class="rounded border-0 input-item py-2 px-3" value="{{ $chart->annual_interest }}" step="0.1"><span class="ml-1 d-inline-block">%</span>
         </div>
         <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
           <label>借入期間 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -132,7 +132,7 @@
               </div>
             </div>
           </label>
-          <input type="number" name="borrowing_period" id="borrowing_period" class="rounded border-0 input-item py-2 px-3" value="{{ $chart->borrowing_period }}"><span class="ml-1 d-inline-block">年</span>
+          <input type="number" name="borrowing_period" id="borrowing_period" class="rounded border-0 input-item py-2 px-3" value="{{ $chart->borrowing_period }}" step="0.1"><span class="ml-1 d-inline-block">年</span>
         </div>
         <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-55 border-bottom">
           <label>年間元利返済額 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -177,7 +177,7 @@
               </div>
             </div>
           </label>
-          <input type="number" name="monthly_rent_income" id="monthly_rent_income" class="rounded border-0 input-item py-2 px-3" value="{{ $chart->monthly_rent_income }}"><span class="ml-1 d-inline-block">万円</span>
+          <input type="number" name="monthly_rent_income" id="monthly_rent_income" class="rounded border-0 input-item py-2 px-3" value="{{ $chart->monthly_rent_income }}" step="0.1"><span class="ml-1 d-inline-block">万円</span>
         </div>
         <div class="d-flex justify-content-between mb-3 pb-3 pb-md-5 border-bottom">
           <label>年間家賃収入 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -206,7 +206,7 @@
               </div>
             </div>
           </label>
-          <input type="number" name="expense" id="expense" class="rounded border-0 input-item py-2 px-3" value="{{ $chart->expense }}"><span class="ml-1 d-inline-block">%</span>
+          <input type="number" name="expense" id="expense" class="rounded border-0 input-item py-2 px-3" value="{{ $chart->expense }}" step="0.1"><span class="ml-1 d-inline-block">%</span>
         </div>
         <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
           <label>空室率 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -219,7 +219,7 @@
               </div>
             </div>
           </label>
-          <input type="number" name="vacancy" id="vacancy" class="rounded border-0 input-item py-2 px-3" value="{{ $chart->vacancy }}"><span class="ml-1 d-inline-block">%</span>
+          <input type="number" name="vacancy" id="vacancy" class="rounded border-0 input-item py-2 px-3" value="{{ $chart->vacancy }}" step="0.1"><span class="ml-1 d-inline-block">%</span>
         </div>
         <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
           <label>年間手取り <span class="material-icons-outlined question-icon">help_outline</span>
@@ -291,7 +291,7 @@
               </div>
             </div>
           </label>
-          <input type="number" name="tax" id="tax" class="rounded border-0 input-item py-2 px-3" value="{{ $chart->tax }}"><span class="ml-1 d-inline-block">%</span>
+          <input type="number" name="tax" id="tax" class="rounded border-0 input-item py-2 px-3" value="{{ $chart->tax }}" step="0.1"><span class="ml-1 d-inline-block">%</span>
         </div>
         <div class="d-flex justify-content-between">
           <label>税引き後CF <span class="material-icons-outlined question-icon">help_outline</span>
@@ -320,7 +320,7 @@
               </div>
             </div>
           </label>
-          <input type="number" name="ownership_period" id="ownership_period" class="rounded border-0 input-item py-2 px-3" value="{{ $chart->ownership_period }}"><span class="ml-1 d-inline-block">年</span>
+          <input type="number" name="ownership_period" id="ownership_period" class="rounded border-0 input-item py-2 px-3" value="{{ $chart->ownership_period }}" step="0.1"><span class="ml-1 d-inline-block">年</span>
         </div>
         <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
           <label>売却価格 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -333,7 +333,7 @@
               </div>
             </div>
           </label>
-          <input type="number" name="sale_price" id="sale_price" class="rounded border-0 input-item py-2 px-3" value="{{ $chart->sale_price }}"><span class="ml-1 d-inline-block">万円</span>
+          <input type="number" name="sale_price" id="sale_price" class="rounded border-0 input-item py-2 px-3" value="{{ $chart->sale_price }}" step="0.1"><span class="ml-1 d-inline-block">万円</span>
         </div>
         <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
           <label>売却手数料率 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -353,7 +353,7 @@
               </div>
             </div>
           </label>
-          <input type="number" name="sale_commission" id="sale_commission" class="rounded border-0 input-item py-2 px-3" value="{{ $chart->sale_commission }}"><span class="ml-1 d-inline-block">%</span>
+          <input type="number" name="sale_commission" id="sale_commission" class="rounded border-0 input-item py-2 px-3" value="{{ $chart->sale_commission }}" step="0.1"><span class="ml-1 d-inline-block">%</span>
         </div>
         <div class="d-flex justify-content-between mb-3 mb-md-4 pb-3 pb-md-5 border-bottom">
           <label>譲渡所得税 <span class="material-icons-outlined question-icon">help_outline</span>
@@ -431,12 +431,12 @@
         @if (isset($chart_option->age))
         <div class="d-flex justify-content-between mb-3 pb-3 pb-md-5 border-bottom">
           <label for="age">築年数</label>
-          <input type="number" name="age" id="age" value="{{ $chart_option->age }}" class="rounded border-0 input-item py-2 px-3"><span class="ml-1 d-inline-block">年</span>
+          <input type="number" name="age" id="age" value="{{ $chart_option->age }}" step="0.1" class="rounded border-0 input-item py-2 px-3"><span class="ml-1 d-inline-block">年</span>
         </div>
         @else
         <div class="d-flex justify-content-between mb-3 pb-3 pb-md-5 border-bottom">
           <label for="age">築年数</label>
-          <input type="number" name="age" id="age" value="" class="rounded border-0 input-item py-2 px-3"><span class="ml-1 d-inline-block">年</span>
+          <input type="number" name="age" id="age" value="" step="0.1" class="rounded border-0 input-item py-2 px-3"><span class="ml-1 d-inline-block">年</span>
         </div>
         @endif
         @if (isset($chart_option->note))

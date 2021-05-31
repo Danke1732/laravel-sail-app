@@ -15,13 +15,15 @@ class UserPageTransitionTest extends TestCase
     use RefreshDatabase;
 
     /**
-     * 管理者ユーザーページ遷移テスト
+     * ユーザーページ遷移テスト
      * @return void
      */
     public function testUserPage()
     {
         // ユーザーを作成
         $user = User::factory()->create();
+        // ユーザー2を作成
+        $user2 = User::factory()->create();
         // 計算記録の作成
         // 計算データの作成
         $chart = Chart::factory()->create([
@@ -39,7 +41,7 @@ class UserPageTransitionTest extends TestCase
         $chart_image_make = ChartImage::factory()->make(array($chart_make));
         $chart_option_make = Option::factory()->make(array($chart_make));
 
-        // --- 管理者ユーザーページ遷移ログイン未テスト ---
+        // --- ユーザーページ遷移ログイン未テスト ---
 
         // ホーム画面への遷移テスト(ログイン未)
         $response = $this->get(route('calculate'));
@@ -79,7 +81,7 @@ class UserPageTransitionTest extends TestCase
         $response = $this->get("/chart/$chart->id");
         $response->assertStatus(302)->assertRedirect(route('login'));
 
-        // --- 管理者ユーザーページ遷移ログイン済みテスト ---
+        // --- ユーザーページ遷移ログイン済みテスト ---
 
         // ホーム画面への遷移テスト(ログイン済み)
         $response = $this->get(route('calculate'));
@@ -92,5 +94,19 @@ class UserPageTransitionTest extends TestCase
         // 計算シミュレーション詳細・編集画面への遷移テスト(ログイン済み)
         $response = $this->actingAs($user)->get("/chart/$chart->id");
         $response->assertStatus(200)->assertViewIs('chart_edit');
+
+        // --- ユーザーページ遷移(他ユーザーログイン)テスト ---
+
+        // ホーム画面への遷移テスト(ログイン済み)
+        $response = $this->get(route('calculate'));
+        $response->assertStatus(200)->assertViewIs('home');
+
+        // ユーザー詳細画面への遷移テスト(ログイン済み)
+        $response = $this->actingAs($user2)->get("/user/$user->id");
+        $response->assertStatus(302)->assertRedirect(route('calculate'));
+
+        // 計算シミュレーション詳細・編集画面への遷移テスト(ログイン済み)
+        $response = $this->actingAs($user2)->get("/chart/$chart->id");
+        $response->assertStatus(302)->assertRedirect(route('calculate'));
     }
 }

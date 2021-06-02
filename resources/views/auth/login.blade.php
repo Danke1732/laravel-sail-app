@@ -62,7 +62,7 @@
         <script>
             grecaptcha.ready(function() {
                 window.noCaptcha.render('login', function (token) {
-                    document.querySelector('#g-recaptcha-response').value = token;
+                    document.getElementById('g-recaptcha-response').value = token;
                 });
             });
         </script>

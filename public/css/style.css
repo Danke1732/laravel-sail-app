@@ -393,6 +393,7 @@ div.contents-outline .contents-area .entry-title {
 div.contents-outline .contents-area .ad-area a {
   width: 36%;
   max-width: 260px;
+  min-width: 110px;
 }
 div.contents-outline .contents-area .ad-area a img {
   width: 95%;
@@ -422,6 +423,9 @@ div.contents-outline .contents-area .ad-area .ad-area-right p a {
 }
 div.contents-outline .contents-area .ad-area .ad-area-right p a:hover {
   color: #b22222;
+}
+div.contents-outline .contents-area .ad-area .ad-area-right .ad-list-text {
+  line-height: 1.4;
 }
 div.contents-outline .contents-area .simulatar-link {
   display: block;
@@ -457,6 +461,12 @@ div.contents-outline .contents-area .table-contents {
   margin-bottom: 1em;
   font-size: 14px;
   width: 100%;
+}
+div.contents-outline .contents-area .table-contents span {
+  font-size: 13px;
+}
+div.contents-outline .contents-area .table-contents .table-contents-head {
+  font-size: 14px;
 }
 div.contents-outline .contents-area .table-contents p:first-child {
   margin-bottom: 0.8em;
@@ -672,6 +682,9 @@ div.contents-outline .contents-area .recommend-box a:hover {
     padding: 18px 0;
   }
 
+  div.contents-outline .contents-area .ad-list-text {
+    line-height: 35px;
+  }
   div.contents-outline .contents-area h3 {
     border-top: 1px #000 solid;
     border-bottom: 1px #000 solid;

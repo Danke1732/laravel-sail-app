@@ -57,8 +57,8 @@
         {!! no_captcha()->getApiScript() !!}
         <script>
             grecaptcha.ready(function() {
-                window.noCaptcha.render('login', function (token) {
-                    document.querySelector('#g-recaptcha-response').value = token;
+                window.noCaptcha.render('register', function (token) {
+                    document.getElementById('g-recaptcha-response').value = token;
                 });
             });
         </script>

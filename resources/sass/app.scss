@@ -504,6 +504,7 @@ div.contents-outline {
       a {
         width: 36%;
         max-width: 260px;
+        min-width: 110px;
   
         img {
           width: 95%;
@@ -539,6 +540,10 @@ div.contents-outline {
               color: #b22222;
             }
           }
+        }
+
+        .ad-list-text {
+          line-height: 1.4;
         }
       }
     }
@@ -584,6 +589,14 @@ div.contents-outline {
       margin-bottom: 1em;
       font-size: 14px;
       width: 100%;
+
+      span {
+        font-size: 13px;
+      }
+
+      .table-contents-head {
+        font-size: 14px;
+      }
 
       p:first-child {
         margin-bottom: 0.8em;
@@ -880,6 +893,10 @@ div.contents-outline {
   div.contents-outline {
 
     .contents-area {
+
+      .ad-list-text {
+        line-height: 35px;
+      }
 
       h3 {
         border-top: 1px #000 solid;

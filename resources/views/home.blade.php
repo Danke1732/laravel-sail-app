@@ -494,7 +494,7 @@
     <i class="fas fa-chevron-up"></i>
   </a>
 
-  <div class="contents-outline pt-5">
+  <div class="contents-outline pt-3 pt-md-4">
 
     <section class="container-fluid mx-auto p-0 pb-3 pb-md-4 contents-area">
       <h1 class="entry-title">【不動産投資】利回りシミュレーションツールの使い方</h1>
@@ -504,9 +504,9 @@
         </a>
         <div class="ad-area-right">
           <h4 class="ad-feature mb-1"><span class="fas fa-check"></span> リノシーの特徴</h3>
-          <p class="mb-1">● 入居率約９９％の堅実な収益</p>
-          <p class="mb-1">● AIによる不動産投資物件紹介</p>
-          <p class="mb-1">● 無料面談でギフト券もらえる</p>
+          <p class="mb-1 ad-list-text">● 入居率約９９％の堅実な収益</p>
+          <p class="mb-1 ad-list-text">● AIによる不動産投資物件紹介</p>
+          <p class="mb-1 ad-list-text">● 無料面談でギフト券もらえる</p>
           <p class="text-right"><a href="https://c.hskr.info/appadtech/a.php?id=c63d1c566d796201443c3914213264f4" target="_brank" rel="nofollow">&gt;&gt; 公式サイトはこちら</a></p>
         </div>
       </div>
@@ -521,7 +521,7 @@
       <a href="https://fudosan.fctry.net/" class="simulatar-link mx-auto mb-4" target="_blank">シミュレーターを使ってみる<span class="fas fa-external-link-alt"></span></a>
   
       <div class="table-contents">
-        <p class="text-center mb-0">目次<span>[<a href="#" data-toggle="collapse" data-target="#childMenuItem1" aria-expanded="true" id="collapsible" aria-controls="childMenuItem1">非表示</a>]</span></p>
+        <p class="text-center mb-0 table-contents-head">目次<span> [<a href="#" data-toggle="collapse" data-target="#childMenuItem1" aria-expanded="true" id="collapsible" aria-controls="childMenuItem1">非表示</a>]</span></p>
         <ul class="table-contents-list collapse show mt-2" id="childMenuItem1">
           <li>
             <a href="#i">不動産投資利回りシミュレーションとは</a>

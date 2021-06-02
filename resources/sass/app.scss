@@ -28,6 +28,7 @@ html {
 body {
   font-family: $font-family-main;
   background: $color-main_background !important;
+  word-wrap: break-word;
 }
 
 .minus {
@@ -112,6 +113,7 @@ body {
   a {
     img {
       max-width: 380px;
+      min-width: 112px;
       width: 100%;
       height: auto;
     }
@@ -474,6 +476,274 @@ div.paginate {
   }
 }
 
+div.contents-outline {
+  background: $color-white;
+  margin: 0 0.5%;
+
+  .contents-area {
+    font-family: "PT Sans Caption", "Josefin Sans", メイリオ, Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
+    color: #3a3a3a;
+    width: 92%;
+    max-width: 680px;
+
+    p {
+      margin-bottom: 20px;
+      font-size: 16px;
+      line-height: 35px;
+    }
+  
+    .entry-title {
+      font-size: 22px;
+      line-height: 30px;
+      margin-bottom: 10px;
+      margin-top: 4px;
+    }
+  
+    .ad-area {
+  
+      a {
+        width: 36%;
+        max-width: 260px;
+  
+        img {
+          width: 95%;
+          height: auto;
+          margin-left: auto;
+          vertical-align: bottom;
+        }
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+  
+      .ad-area-right {
+        width: 64%;
+  
+        .ad-feature {
+          color: #2E7D32;
+          font-size: 16px;
+          font-weight: 700;
+        }
+  
+        p {
+          font-size: 14px;
+  
+          a {
+            color: #4682b4;
+            font-size: 16px;
+            text-decoration: underline;
+            font-weight: 700;
+  
+            &:hover {
+              color: #b22222;
+            }
+          }
+        }
+      }
+    }
+
+    .simulatar-link {
+      display: block;
+      width: 94%;
+      background: #ffb53c;
+      box-shadow: 0 4px 0 #e09900;
+      line-height: 1.4;
+      border-radius: 4px;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      color: #fff;
+      padding: 10px 0;
+      font-size: 16px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &:active {
+        opacity: .8;
+        top: 3px;
+        box-shadow: none;
+        color: #fff;
+      }
+    }
+
+    p {
+
+      img {
+        max-width: 96%;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+
+    .table-contents {
+      background: #f9f9f9;
+      border: 1px solid #aaa;
+      padding: 8px;
+      margin-bottom: 1em;
+      font-size: 14px;
+      width: 100%;
+
+      p:first-child {
+        margin-bottom: 0.8em;
+      }
+
+      .table-contents-list ul {
+        margin-left: 1.3em;
+      }
+
+      li {
+        line-height: 2.2;
+      }
+
+      a {
+        color: #4682b4;
+
+        &:hover {
+          color: #b22222;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    h2 {
+      background: #f3f3f3;
+      color: #1a1a1a;
+      padding: 10px 20px;
+      line-height: 27px;
+      font-weight: bold;
+      position: relative;
+      margin-bottom: 20px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        border-top: 10px solid #f3f3f3;
+        border-right: 10px solid transparent;
+        border-left: 10px solid transparent;
+        bottom: -10px;
+        left: 30px;
+        border-radius: 2px;
+      }
+
+      &:before  {
+        content: '';
+        position: absolute;
+        border-top: 10px solid #f3f3f3;
+        border-right: 10px solid transparent;
+        border-left: 10px solid transparent;
+        bottom: -10px;
+        left: 30px;
+        border-radius: 2px
+      }
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      margin-top: 10px;
+      padding-top: 15px;
+      padding-right: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      color: #1a1a1a;
+      line-height: 27px;
+      background-repeat: no-repeat;
+      background-position: left center;
+      margin-left: 0px;
+      border-bottom: 1px #999999 dotted;
+    }
+
+    table {
+      border-top: 1px #999 solid;
+      border-right: 1px #999 solid;
+      margin-bottom: 20px;
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      border: none;
+      display: table;
+      box-sizing: border-box;
+      text-indent: initial;
+      font-size: 13px;
+
+      thead {
+        th {
+          color: #fff;
+          background-color: #EE9D05;
+          text-align: center;
+          border: 1px solid #ccc;
+          padding: 8px;
+        }
+      }
+
+      tbody {
+        tr:nth-child(even) {
+          background: rgba(220,220,220,0.2);
+        }
+
+        td {
+          border: 1px solid #ccc;
+          padding: 8px;
+          line-height: normal;
+        }
+
+        tr:hover {
+          background: #f3f3f3;
+        }
+      }
+    }
+
+    .supplement {
+      font-size: 0.9em;
+      padding: 3% 4%;
+      margin: 1.5em 0 2em;
+      -webkit-border-radius: 4px;
+      border-radius: 4px;
+      border: 1px solid #999;
+      border-color: rgba(165, 165, 165, 0.2);
+
+      p {
+        font-size: 16px;
+        line-height: 2.2;
+      }
+    }
+
+    .recommend-box {
+      display: block;
+      padding: 16px;
+      padding-bottom: 6px;
+      border: solid 1px #e5e5e5;
+      background-color: #f9f9f9;
+      margin-bottom: 20px;
+      border-radius: 4px;
+
+      .str-orange {
+        color: #F57F17;
+      }
+
+      img:hover {
+        opacity: 0.8;
+      }
+
+
+      a {
+        color: #4682b4;
+        font-size: 16px;
+        text-decoration: underline;
+        font-weight: 400;
+
+        &:hover {
+          color: #b22222;
+        }
+      }
+    }
+  
+  }
+}
+
+
 // フッター関係CSS
 .footer {
   width: 100%;
@@ -603,6 +873,17 @@ div.paginate {
 
       .user-support-fixed {
         padding: 18px 0;
+      }
+    }
+  }
+
+  div.contents-outline {
+
+    .contents-area {
+
+      h3 {
+        border-top: 1px #000 solid;
+        border-bottom: 1px #000 solid;
       }
     }
   }

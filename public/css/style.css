@@ -8,6 +8,7 @@ html {
 body {
   font-family: メイリオ, Meiryo, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "Hiragino Sans", "Noto Sans JP", sans-serif;
   background: #f6f6f6 !important;
+  word-wrap: break-word;
 }
 
 .minus {
@@ -69,6 +70,7 @@ body {
 
 .ad-display a img {
   max-width: 380px;
+  min-width: 112px;
   width: 100%;
   height: auto;
 }
@@ -168,7 +170,6 @@ body {
 .main-tool form .form-item input[type=number] {
   -moz-appearance: textfield;
 }
-
 .main-tool form .form-item .image-form .images label {
   line-height: normal;
   display: inline-block;
@@ -211,7 +212,6 @@ body {
 .main-tool form .form-item .image-form .images input[type=file] {
   display: none;
 }
-
 .main-tool form .user-support .choice {
   color: #fff;
   background: #00a9f1;
@@ -369,6 +369,223 @@ div.paginate ul.pagination {
   transform: translate(-50%, -50%);
 }
 
+div.contents-outline {
+  background: #fff;
+  margin: 0 0.5%;
+}
+div.contents-outline .contents-area {
+  font-family: "PT Sans Caption", "Josefin Sans", メイリオ, Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
+  color: #3a3a3a;
+  width: 92%;
+  max-width: 680px;
+}
+div.contents-outline .contents-area p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 35px;
+}
+div.contents-outline .contents-area .entry-title {
+  font-size: 22px;
+  line-height: 30px;
+  margin-bottom: 10px;
+  margin-top: 4px;
+}
+div.contents-outline .contents-area .ad-area a {
+  width: 36%;
+  max-width: 260px;
+}
+div.contents-outline .contents-area .ad-area a img {
+  width: 95%;
+  height: auto;
+  margin-left: auto;
+  vertical-align: bottom;
+}
+div.contents-outline .contents-area .ad-area a:hover {
+  opacity: 0.8;
+}
+div.contents-outline .contents-area .ad-area .ad-area-right {
+  width: 64%;
+}
+div.contents-outline .contents-area .ad-area .ad-area-right .ad-feature {
+  color: #2E7D32;
+  font-size: 16px;
+  font-weight: 700;
+}
+div.contents-outline .contents-area .ad-area .ad-area-right p {
+  font-size: 14px;
+}
+div.contents-outline .contents-area .ad-area .ad-area-right p a {
+  color: #4682b4;
+  font-size: 16px;
+  text-decoration: underline;
+  font-weight: 700;
+}
+div.contents-outline .contents-area .ad-area .ad-area-right p a:hover {
+  color: #b22222;
+}
+div.contents-outline .contents-area .simulatar-link {
+  display: block;
+  width: 94%;
+  background: #ffb53c;
+  box-shadow: 0 4px 0 #e09900;
+  line-height: 1.4;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: #fff;
+  padding: 10px 0;
+  font-size: 16px;
+}
+div.contents-outline .contents-area .simulatar-link:hover {
+  opacity: 0.8;
+}
+div.contents-outline .contents-area .simulatar-link:active {
+  opacity: 0.8;
+  top: 3px;
+  box-shadow: none;
+  color: #fff;
+}
+div.contents-outline .contents-area p img {
+  max-width: 96%;
+  margin: 0 auto;
+  display: block;
+}
+div.contents-outline .contents-area .table-contents {
+  background: #f9f9f9;
+  border: 1px solid #aaa;
+  padding: 8px;
+  margin-bottom: 1em;
+  font-size: 14px;
+  width: 100%;
+}
+div.contents-outline .contents-area .table-contents p:first-child {
+  margin-bottom: 0.8em;
+}
+div.contents-outline .contents-area .table-contents .table-contents-list ul {
+  margin-left: 1.3em;
+}
+div.contents-outline .contents-area .table-contents li {
+  line-height: 2.2;
+}
+div.contents-outline .contents-area .table-contents a {
+  color: #4682b4;
+}
+div.contents-outline .contents-area .table-contents a:hover {
+  color: #b22222;
+  text-decoration: underline;
+}
+div.contents-outline .contents-area h2 {
+  background: #f3f3f3;
+  color: #1a1a1a;
+  padding: 10px 20px;
+  line-height: 27px;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 20px;
+}
+div.contents-outline .contents-area h2:after {
+  content: "";
+  position: absolute;
+  border-top: 10px solid #f3f3f3;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  bottom: -10px;
+  left: 30px;
+  border-radius: 2px;
+}
+div.contents-outline .contents-area h2:before {
+  content: "";
+  position: absolute;
+  border-top: 10px solid #f3f3f3;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  bottom: -10px;
+  left: 30px;
+  border-radius: 2px;
+}
+div.contents-outline .contents-area h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  padding-top: 15px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  color: #1a1a1a;
+  line-height: 27px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  margin-left: 0px;
+  border-bottom: 1px #999999 dotted;
+}
+div.contents-outline .contents-area table {
+  border-top: 1px #999 solid;
+  border-right: 1px #999 solid;
+  margin-bottom: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: none;
+  display: table;
+  box-sizing: border-box;
+  text-indent: initial;
+  font-size: 13px;
+}
+div.contents-outline .contents-area table thead th {
+  color: #fff;
+  background-color: #EE9D05;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+div.contents-outline .contents-area table tbody tr:nth-child(even) {
+  background: rgba(220, 220, 220, 0.2);
+}
+div.contents-outline .contents-area table tbody td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  line-height: normal;
+}
+div.contents-outline .contents-area table tbody tr:hover {
+  background: #f3f3f3;
+}
+div.contents-outline .contents-area .supplement {
+  font-size: 0.9em;
+  padding: 3% 4%;
+  margin: 1.5em 0 2em;
+  border-radius: 4px;
+  border: 1px solid #999;
+  border-color: rgba(165, 165, 165, 0.2);
+}
+div.contents-outline .contents-area .supplement p {
+  font-size: 16px;
+  line-height: 2.2;
+}
+div.contents-outline .contents-area .recommend-box {
+  display: block;
+  padding: 16px;
+  padding-bottom: 6px;
+  border: solid 1px #e5e5e5;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+div.contents-outline .contents-area .recommend-box .str-orange {
+  color: #F57F17;
+}
+div.contents-outline .contents-area .recommend-box img:hover {
+  opacity: 0.8;
+}
+div.contents-outline .contents-area .recommend-box a {
+  color: #4682b4;
+  font-size: 16px;
+  text-decoration: underline;
+  font-weight: 400;
+}
+div.contents-outline .contents-area .recommend-box a:hover {
+  color: #b22222;
+}
+
 .footer {
   width: 100%;
   height: 60px;
@@ -453,5 +670,10 @@ div.paginate ul.pagination {
   }
   .main-tool form .user-support-fixed {
     padding: 18px 0;
+  }
+
+  div.contents-outline .contents-area h3 {
+    border-top: 1px #000 solid;
+    border-bottom: 1px #000 solid;
   }
 }

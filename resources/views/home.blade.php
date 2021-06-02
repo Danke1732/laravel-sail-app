@@ -494,5 +494,290 @@
     <i class="fas fa-chevron-up"></i>
   </a>
 
+  <div class="contents-outline pt-5">
+
+    <section class="container-fluid mx-auto p-0 pb-3 pb-md-4 contents-area">
+      <h1 class="entry-title">【不動産投資】利回りシミュレーションツールの使い方</h1>
+      <div class="ad-area border pl-1 py-2 mb-4 d-flex rounded">
+        <a href="https://c.hskr.info/appadtech/a.php?id=c63d1c566d796201443c3914213264f4" class="d-inline-block mr-1 mr-sm-2 pt-5 pt-sm-0">
+          <img src="https://hskr.info/wp-content/uploads/2020/06/renosy_1.png">
+        </a>
+        <div class="ad-area-right">
+          <h4 class="ad-feature mb-1"><span class="fas fa-check"></span> リノシーの特徴</h3>
+          <p class="mb-1">● 入居率約９９％の堅実な収益</p>
+          <p class="mb-1">● AIによる不動産投資物件紹介</p>
+          <p class="mb-1">● 無料面談でギフト券もらえる</p>
+          <p class="text-right"><a href="https://c.hskr.info/appadtech/a.php?id=c63d1c566d796201443c3914213264f4" target="_brank" rel="nofollow">&gt;&gt; 公式サイトはこちら</a></p>
+        </div>
+      </div>
+  
+      <p>
+        不動産投資利回りシミュレーションは、必要な項目を入力するだけで、自動で利回りやキャッシュフローを計算できる便利ツールです。
+      </p>
+      <p>
+        各項目の解説とあわせて、利回り計算ツールの使い方をご紹介します。
+      </p>
+  
+      <a href="https://fudosan.fctry.net/" class="simulatar-link mx-auto mb-4" target="_blank">シミュレーターを使ってみる<span class="fas fa-external-link-alt"></span></a>
+  
+      <div class="table-contents">
+        <p class="text-center mb-0">目次<span>[<a href="#" data-toggle="collapse" data-target="#childMenuItem1" aria-expanded="true" id="collapsible" aria-controls="childMenuItem1">非表示</a>]</span></p>
+        <ul class="table-contents-list collapse show mt-2" id="childMenuItem1">
+          <li>
+            <a href="#i">不動産投資利回りシミュレーションとは</a>
+            <ul>
+              <li>
+                <a href="#i-2">シミュレーションの概要と重要性</a>
+              </li>
+              <li>
+                <a href="#i-3">利回りシミュレーションの注意点</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#i-4">不動産投資シミュレーションの使い方</a>
+          </li>
+          <li>
+            <a href="#i-5">表面利回りと実質利回りの計算方法と例</a>
+            <ul>
+              <li><a href="#i-6">表面利回り</a></li>
+              <li><a href="#i-7">実質利回り</a></li>
+              <li><a href="#i-8">利回りの計算方法</a></li>
+            </ul>
+          </li>
+          <li><a href="#i-9">印刷して活用しよう</a></li>
+        </ul>
+      </div>
+  
+      <h2>
+        {{-- before::  --}}
+        <span id="i">不動産投資利回りシミュレーションとは</span>
+        {{-- after::  --}}
+      </h2>
+  
+      <p>
+        <img src="https://hskr.info/wp-content/uploads/2021/05/計算機_01.png">
+      </p>
+  
+      <h3>
+        <span id="i-2"> 
+          <i class="fas fa-check-circle"></i>
+        </span>
+        <span>
+          シミュレーションの概要と重要性
+        </span>
+      </h3>
+  
+      <p>
+        不動産投資で収益をあげるためには、投資物件の見極めが重要です。
+      </p>
+      <p>
+        <b>
+          そのためには毎月の家賃収入だけでなく、返済や税金などといった必要経費を考慮したあとに手元に残るCF（キャッシュフロー）を試算する必要があります。
+        </b>
+      </p>
+      <p>
+        また不動産は経年とともに評価額や入居率の低下など、収入減のリスクは増えていくものです。
+      </p>
+      <p>
+        このシミュレーションツールは、購入前に投資物件の利回りをできるだけ具体的にシミュレーションしておくことで、安定した資産形成につなげることを目的としています。
+      </p>
+  
+      <h3>
+        <span id="i-3"> 
+          <i class="fas fa-check-circle"></i>
+        </span>
+        <span>
+          利回りシミュレーションの注意点
+        </span>
+      </h3>
+  
+      <p>
+        <b>
+          できる限り具体的な数字を試算しても、現実は必ずしもその通りになるわけではありません。
+        </b>
+      </p>
+  
+      <p>
+        契約上の細かい条件や、社会情勢の変化、入居率の変動など、想定不可能な要素によって変動する可能性があることは大前提として、あくまでシミュレーション（想定）と割り切って数字をとらえておくようにしましょう。
+      </p>
+  
+      <h2>
+        {{-- before::  --}}
+        <span id="i-4">不動産投資シミュレーションの使い方</span>
+        {{-- after::  --}}
+      </h2>
+  
+      <p>
+        不動産投資のシミュレーションは、必要な数字を項目に入力するだけで自動で計算してくれます。
+      </p>
+      <p>
+        主な項目と内容について、下記の表をご参考ください。
+      </p>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>内容と説明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>購入価格項目</td>
+            <td>
+              購入金額の他、手数料も入力して総額を算出します。<br />
+              手数料の目安は新築なら4~6%、中古なら7~10%です。
+            </td>
+          </tr>
+          <tr>
+            <td>資金項目</td>
+            <td>
+              借入金額や、利息などの住宅ローンの情報を入力します。<br />
+              金利には固定金利と変動金利があり、変動金利方の場合は目安を入力してください。
+            </td>
+          </tr>
+          <tr>
+            <td>キャッシュフロー単年項目</td>
+            <td>
+              賃貸する際の月額家賃や経費率を入力します。<br />
+              経費率は家賃の10~30%が目安で、築年数に比例します。<br />
+              空室率は10%~30%ですが、地域差がありますのでネットで調べてより現実的な数字を入れましょう。
+            </td>
+          </tr>
+          <tr>
+            <td>キャッシュフロー累計項目</td>
+            <td>
+              売却価格は、売却予定時の築年数で同条件のマンション価格を調べて参考にしましょう。<br />
+              売却手数料には印紙代や登記手数料、仲介手数料などが含まれます。
+            </td>
+          </tr>
+          <tr>
+            <td>オプション項目 </td>
+            <td>
+              複数の物件の利回りを比較しやすいように、物件名や画像などの物件情報を残しておきましょう。
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <h2>
+        {{-- before::  --}}
+        <span id="i-5">表面利回りと実質利回りの計算方法と例</span>
+        {{-- after::  --}}
+      </h2>
+  
+      <p><b>不動産投資の利回りには、表面利回りと実質利回りの2種類があります。</b></p>
+      <p>
+        投資物件の広告には表面利回りしか載っていないことが多いので、必ず実質利回りを計算するようにしましょう。
+      </p>
+  
+      <h3>
+        <span id="i-6">
+          <i class="fas fa-check-circle"></i>
+        </span>
+        <span>
+          表面利回り
+        </span>
+      </h3>
+  
+      <p>
+        <img src="https://hskr.info/wp-content/uploads/2019/03/hesokuri_20190531_bunchu_640x300_012.png">
+      </p>
+  
+      <p>
+        表面利回りは、別名グロス利回りとも言われ、物件が持つだいたいの収益力を見るのに便利な簡易的な利回り計算方法です。
+      </p>
+  
+      <div class="border mt-0 supplement">
+        想定年間家賃収入÷物件の購入価格×100
+      </div>
+  
+      <h3>
+        <span id="i-7">
+          <i class="fas fa-check-circle"></i>
+        </span>
+        <span>
+          実質利回り
+        </span>
+      </h3>
+  
+      <p>
+        <img src="https://hskr.info/wp-content/uploads/2019/03/hesokuri_20190531_bunchu_640x300_013.png">
+      </p>
+  
+      <p>
+        表面利回りとは異なり、固定資産税や管理費、保険料や修繕費用など不動産運営にかかる経費を含めて算出しているのが実質利回りです。
+      </p>
+  
+      <div class="border mt-0 supplement">
+        （想定年間家賃収入－年間経費）÷（物件価格＋購入時諸費用）×100
+      </div>
+  
+      <h3>
+        <span id="i-8">
+          <i class="fas fa-check-circle"></i>
+        </span>
+        <span>
+          利回りの計算例
+        </span>
+      </h3>
+  
+      <p>実際の数字を当てはめてみましょう。</p>
+  
+      <div class="border mt-0 supplement">
+        <p class="mb-0">
+          <b style="color: orange;">●</b> <b>利回り計算条件</b> <br />
+          投資物件購入価格（物件価格）：3,000万円 <br />
+          年間家賃収入：144万円（12万円/月） <br />
+          年間諸経費：70万円
+        </p>
+      </div>
+  
+      <p>
+        <img src="https://hskr.info/wp-content/uploads/2019/03/hesokuri_20190531_bunchu_640x300_014.png">
+      </p>
+  
+      <p>実質利回りに比べて表面利回りでは倍の利回りになっています。</p>
+  
+      <p>シミュレーターを使って、より現実的な想定利回りを把握しておきましょう。</p>
+  
+      <h2>
+        {{-- before::  --}}
+        <span id="i-9">印刷して活用しよう</span>
+        {{-- after::  --}}
+      </h2>
+      <p><b>不動産投資では、必ず投資物件が利益を出せる不動産かどうか確認してから購入しましょう。</b></p>
+      <p>
+        すでに所有している投資物件のキャッシュフローを確認したり、購入を検討している不動産の利回りを比較したりと、資産形成のお役立ちツールとして活用ください。
+      </p>
+  
+      <a href="https://fudosan.fctry.net/" class="simulatar-link mx-auto mb-4" target="_blank">シミュレーターを使ってみる<span class="fas fa-external-link-alt"></span></a>
+  
+      <div class="recommend-box">
+        <p class="str-orange text-center mb-1">不動産投資の情報収集を始めよう！</p>
+        <p class="text-center">
+          <a href="https://c.hskr.info/appadtech/a.php?id=c63d1c566d796201443c3914213264f4" target="_blank" rel="nofollow noopener" class="inline-block text-center">
+            <img src="https://hskr.info/wp-content/uploads/2020/06/renosy_1.png" class="d-inline-block" alt="マンションオーナー">
+          </a>
+        </p>
+        <p class="mb-1">無料で<b class="str-orange">DVDとオリジナルブック</b>がもらえる！</p>
+        <p class="mb-1">
+          <b class="str-orange">● </b>入居率約99%の堅実な収益 <br />
+          <b class="str-orange">● </b>AIによる不動産投資物件紹介 <br />
+          <b class="str-orange">● </b>無料面談でギフト券もらえる <br />
+        </p>
+        <p class="mb-0"><a href="https://c.hskr.info/appadtech/a.php?id=c63d1c566d796201443c3914213264f4" target="_blank" rel="nofollow noopener">→無料で資料請求する<span class="fas fa-external-link-alt"></span></a></p>
+      </div>
+    </section>
+  </div>
+
   @include('layouts.footer')
+  <script type="text/javascript">
+    function handleClick()
+    {
+      this.text = (this.text == '非表示' ? '表示' : '非表示');
+    }
+    document.getElementById('collapsible').onclick=handleClick;
+  </script>
 @endsection

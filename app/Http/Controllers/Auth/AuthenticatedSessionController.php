@@ -28,6 +28,13 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
+        $request->validate([
+            'g-recaptcha-response' => ['required', new \Arcanedev\NoCaptcha\Rules\CaptchaRule]
+        ], [
+            'g-recaptcha-response.required' => 'reCaptchaのトークンが存在しません。',
+            'g-recaptcha-response.captcha'  => 'reCaptchaによってうまく認証されませんでした。',
+        ]);
+
         $request->authenticate();
 
         $request->session()->regenerate();
